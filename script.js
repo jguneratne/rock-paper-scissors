@@ -1,5 +1,3 @@
-console.log("Hello World!"); 
-
 // Write a console program for Rock-Paper-Scissors Game
 // Game has two players
 // Players say "Rock, Paper, Scissors, Shoot" and throw their selection on "Shoot"
