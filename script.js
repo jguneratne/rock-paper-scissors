@@ -18,6 +18,21 @@
 
     // Write a function called getComputerChoice that randomly returns 'Rock', 'Paper' or 'Scissors'
 
+        // Practice try, without a function: 
+            //let selections = ["Rock", "Paper", "Scissors"]
+            //let random = selections[Math.floor(Math.random() * selections.length)]
+            //console.log(random);
+    
+        // Working attempt inside a function
+        
+    function getComputerChoice() {
+        let selections = ["Rock", "Paper", "Scissors"];
+        let random = selections[Math.floor(Math.random() * selections.length)];
+        return random;
+    }
+
+    console.log(getComputerChoice());
+
     // Write a function called playRound that plays a single round of Rock-Paper-Scissors
         // Function takes two parameters: playerSelection and computerSelection
         // Make sure player selection of parameter is case-insensitive (can take rock, ROCK, RocK, etc)
