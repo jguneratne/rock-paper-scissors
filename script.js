@@ -46,15 +46,15 @@
             if (playerSelection === "Rock" && computerSelection === "Scissors" ||
                 playerSelection === "Paper" && computerSelection === "Rock" ||
                 playerSelection === "Scissors" && computerSelection === "Paper") {
-                    greeting = `You win! ${playerSelection} beats ${computerSelection}.`
+                    greeting = `You win! Your ${playerSelection} beats their ${computerSelection}.`
                 } else if 
                 (playerSelection === "Rock" && computerSelection === "Paper" ||
                 playerSelection === "Paper" && computerSelection === "Scissors" ||
                 playerSelection === "Scissors" && computerSelection === "Rock") {
-                    greeting = `You loose! ${computerSelection} beats ${playerSelection}.`
+                    greeting = `You loose! Their ${computerSelection} beats your ${playerSelection}.`
                 } else if 
                     (playerSelection === computerSelection) {
-                    greeting = "It's a Draw!"
+                    greeting = `It's a Draw! You both picked ${playerSelection}.`
                 } else {
                     greeting = "There was a problem."
                 }
@@ -63,9 +63,9 @@
         }
 
         const computerSelection = getComputerChoice();
-        console.log(computerSelection);
+        // console.log(computerSelection);
         const playerSelection = "Rock";
-        console.log(playerSelection)
+        // console.log(playerSelection)
         console.log(playRound(playerSelection, computerSelection));
     
     // Write a function called game(), and call the playRound() function inside of this one
