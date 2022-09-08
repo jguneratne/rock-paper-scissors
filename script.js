@@ -31,7 +31,7 @@
         return random;
     }
 
-    console.log(getComputerChoice());
+    // console.log(getComputerChoice());
 
     // Write a function called playRound that plays a single round of Rock-Paper-Scissors
         // Function takes two parameters: playerSelection and computerSelection
@@ -63,7 +63,9 @@
         }
 
         const computerSelection = getComputerChoice();
+        console.log(computerSelection);
         const playerSelection = "Rock";
+        console.log(playerSelection)
         console.log(playRound(playerSelection, computerSelection));
     
     // Write a function called game(), and call the playRound() function inside of this one
