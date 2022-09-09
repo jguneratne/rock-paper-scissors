@@ -41,8 +41,7 @@
         // Return a string that declares the winner of the round, e.g. "You Lose! Paper beats Rock"
         // This function *returns* the results, rather than using console.log
 
-        function playRound(playerSelection, computerSelection) {
-
+        function playRound(playerSelection, computerSelection) { 
             if (playerSelection === "Rock" && computerSelection === "Scissors" ||
                 playerSelection === "Paper" && computerSelection === "Rock" ||
                 playerSelection === "Scissors" && computerSelection === "Paper") {
@@ -61,10 +60,10 @@
 
             return greeting;
         }
-
+        
         const computerSelection = getComputerChoice();
         // console.log(computerSelection);
-        const playerSelection = "Rock";
+        const playerSelection = prompt("Ready to Play? Enter Rock, Paper or Scissors!", "Make your choice here.");
         // console.log(playerSelection)
         console.log(playRound(playerSelection, computerSelection));
     
