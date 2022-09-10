@@ -63,7 +63,7 @@
         
         const computerSelection = getComputerChoice();
         // console.log(computerSelection);
-        const playerSelection = prompt("Ready to Play? Enter Rock, Paper or Scissors!", "Make your choice here.");
+        let playerSelection =  prompt("Ready to Play? Enter Rock, Paper or Scissors!", "Make your choice here.");
         // console.log(playerSelection)
         console.log(playRound(playerSelection, computerSelection));
     
@@ -73,9 +73,46 @@
         // The winner or loser is reported at the end of the 5 rounds
         // Use console.log() to display the results of each round and the winner at the end
 
-        //function game() {
-        //    for (let i = 0; i < 5; i++)
-        //}
+
+        //    for (let i = 0; i < 5; i++) {
+        //     function game() {
+        //         playRound(playerSelection = prompt("Ready to Play? Enter Rock, Paper or Scissors!", "Make your choice here.").toLowerCase(), 
+        //         computerSelection.toLowerCase());
+
+        //         if (playerSelection > computerSelection) {
+        //             greeting = "You win the game!";
+        //         } else if 
+        //             (playerSelection < computerSelection) {
+        //                 greeting = "You lost the game!"
+        //         } else {
+        //             "Something went wrong."
+        //         }
+
+        //         return game;
+        //    }
+        // }
+        // console.log(game());
+
+       
+        function game() {
+            playRound(playerSelection = prompt("Ready to Play? Enter Rock, Paper or Scissors!", "Make your choice here.").toLowerCase(), 
+            computerSelection.toLowerCase());
+
+            for (let i = 0; i < 5; i++) {
+
+                if (playerSelection > computerSelection) {
+                    greeting = "You win the game!";
+                } else if 
+                    (playerSelection < computerSelection) {
+                        greeting = "You lost the game!"
+                } else {
+                    greeting = "Something went wrong."
+                }
+
+                return greeting;
+           }
+        }
+        console.log(game(greeting));
 
         // Other notes: 
             // Feel free to rework previous functions if needed
