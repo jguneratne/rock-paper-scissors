@@ -61,14 +61,15 @@
             return greeting;
         }
         
-        const computerSelection = getComputerChoice();
+        let computerSelection = getComputerChoice();
         // console.log(computerSelection);
         let playerSelection =  prompt("Ready to Play? Enter Rock, Paper or Scissors!", "Make your choice here.");
         // console.log(playerSelection)
-        console.log(playRound(playerSelection, computerSelection));
+        // console.log(playRound(playerSelection, computerSelection));
     
     // Write a function called game(), and call the playRound() function inside of this one
-        // The Function should play 5 rounds of the game and keeps score (use loops)
+        // The Function should play 5 rounds of the game 
+        // Keep score (use loops)
         // Use prompt() to get input from the user
         // The winner or loser is reported at the end of the 5 rounds
         // Use console.log() to display the results of each round and the winner at the end
@@ -95,24 +96,46 @@
 
        
         function game() {
-            playRound(playerSelection = prompt("Ready to Play? Enter Rock, Paper or Scissors!", "Make your choice here.").toLowerCase(), 
-            computerSelection.toLowerCase());
 
             for (let i = 0; i < 5; i++) {
 
-                if (playerSelection > computerSelection) {
-                    greeting = "You win the game!";
-                } else if 
-                    (playerSelection < computerSelection) {
-                        greeting = "You lost the game!"
-                } else {
-                    greeting = "Something went wrong."
-                }
+                let score = 0; 
+                let roundResultPlayer = score++; 
+                let roundResultComputer = score++;
+
+                playRound(playerSelection = prompt("Ready to Play? Enter Rock, Paper or Scissors!", "Make your choice here.").toLowerCase(), 
+                computerSelection.toLowerCase());
+
+                // if (playerSelection > computerSelection) {
+                //     greeting = `Your score is ${roundResult}. You win the round.`;
+                // } else if 
+                //     (playerSelection < computerSelection) {
+                //     greeting = ` Their score is ${roundResult}. They win the round.`;
+                // } else {
+                //     greeting = "I don't know how to keep score."
+                // }
 
                 return greeting;
            }
         }
-        console.log(game(greeting));
+
+        console.log(game());
+
+        function finalResult() {
+
+            if (playerSelection > computerSelection) {
+                greeting = "You win the game!";
+            } else if 
+                (playerSelection < computerSelection) {
+                greeting = "You lost the game!"
+            } else {
+                greeting = "Something went wrong."
+            }
+
+                return greeting;
+            }
+        
+        console.log(finalResult()); 
 
         // Other notes: 
             // Feel free to rework previous functions if needed
