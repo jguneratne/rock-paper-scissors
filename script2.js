@@ -14,8 +14,6 @@ playerSelection = prompt
 computerSelection = getComputerChoice()
 let score values for each player and a tie
 conditional statements comparing entries and incrementing scores
-
-Why does adding .toLowerCase to the prompt return the else statement??
 */ 
 
 
@@ -23,6 +21,9 @@ function playRound(playerSelection, computerSelection) {
     
     playerSelection = prompt("Ready to Play? Enter Rock, Paper or Scissors!", "Make your choice here.");
     computerSelection = getComputerChoice();
+
+    playerSelection = playerSelection.toLowerCase();
+    computerSelection = computerSelection.toLowerCase();
  
 
     let playerScore = 0;
@@ -30,17 +31,17 @@ function playRound(playerSelection, computerSelection) {
     let tieScore = 0;
     
     if 
-        (playerSelection === "Rock" && computerSelection === "Scissors" ||
-        playerSelection === "Paper" && computerSelection === "Rock" ||
-        playerSelection === "Scissors" && computerSelection === "Paper") {
+        (playerSelection === "rock" && computerSelection === "scissors" ||
+        playerSelection === "paper" && computerSelection === "rock" ||
+        playerSelection === "scissors" && computerSelection === "paper") {
         playerScore++;
         return `You win this round! Your ${playerSelection} beats their ${computerSelection}. Your score is ${playerScore}. Their score is ${computerScore}.`
 
     } else if 
 
-        (playerSelection === "Rock" && computerSelection === "Paper" ||
-        playerSelection === "Paper" && computerSelection === "Scissors" ||
-        playerSelection === "Scissors" && computerSelection === "Rock") {
+        (playerSelection === "rock" && computerSelection === "paper" ||
+        playerSelection === "paper" && computerSelection === "scissors" ||
+        playerSelection === "scissors" && computerSelection === "rock") {
         computerScore++;
         return `You loose this round! Their ${computerSelection} beats your ${playerSelection}. Your score is ${playerScore}. Their score is ${computerScore}.`
 
