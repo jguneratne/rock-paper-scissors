@@ -71,8 +71,7 @@ function game() {
 let round = 0;
 
 do {
-    playRound(round++);
-    console.log(playRound());
+    console.log(playRound(round++));
 } while (round < 5)
 
 }
