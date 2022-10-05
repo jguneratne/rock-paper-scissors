@@ -24,33 +24,31 @@ function playRound(playerSelection, computerSelection) {
 
     playerSelection = playerSelection.toLowerCase();
     computerSelection = computerSelection.toLowerCase();
- 
 
-    let playerScore = 0;
-    let computerScore = 0;
-    let tieScore = 0;
+    playerScore = 0;
+    computerScore = 0;
+    tieScore = 0;
     
     if 
         (playerSelection === "rock" && computerSelection === "scissors" ||
         playerSelection === "paper" && computerSelection === "rock" ||
         playerSelection === "scissors" && computerSelection === "paper") {
-        playerScore++;
-        return `You win this round! Your ${playerSelection} beats their ${computerSelection}. Your score is ${playerScore}. Their score is ${computerScore}.`
+
+        return `You win this round! You chose ${playerSelection}, they chose ${computerSelection}.`
 
     } else if 
 
         (playerSelection === "rock" && computerSelection === "paper" ||
         playerSelection === "paper" && computerSelection === "scissors" ||
         playerSelection === "scissors" && computerSelection === "rock") {
-        computerScore++;
-        return `You loose this round! Their ${computerSelection} beats your ${playerSelection}. Your score is ${playerScore}. Their score is ${computerScore}.`
+            computerScore++;
+        return `You loose this round! You chose ${playerSelection}, they chose ${computerSelection}.`
 
     } else if 
             
         (playerSelection === computerSelection) {
             
-            return `This round was a tie! You both picked ${playerSelection}. You both scored ${tieScore}`
-
+            return `This round was a tie! You both chose ${playerSelection}.`
     } else {
 
             return "There was a problem."
@@ -59,6 +57,24 @@ function playRound(playerSelection, computerSelection) {
 
 //  console.log(playRound()); 
 
+
+/* Build keepScore function
+    Takes score from playRound and adds it for each player
+    Displays score at end of game()
+*/
+
+function keepScore () {
+    playRound(playerScore, computerScore, tieScore);
+
+    for (i = 0; i > 5; i++) {
+        if (playerSelection > computerSelection) {
+            playerScore++;
+        } else {
+            computerScore++
+        } 
+    }
+    
+}
 
 /* Build function that plays 5 rounds of game
 let round = number
@@ -69,11 +85,13 @@ announce winner at the end
 
 function game() {
 
-let round = 0;
+round = 0;
 
 do {
     console.log(playRound(round++));
+    //console.log(keepScore());
 } while (round < 5)
+
 
 }
   console.log(game());
