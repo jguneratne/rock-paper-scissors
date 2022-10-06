@@ -84,6 +84,22 @@ function game() {
 
         console.log(playRound(playerSelection, computerSelection));
     }
+
+    if(checkWinner(playerSelection, computerSelection) === "Player") {
+        playerScore++;
+    } else if (checkWinner(playerScore, computerScore) === "Computer;") {
+        computerScore++;
+    }
+
+    console.log("------------");
+    console.log("Game Over:");
+    if(playerScore > computerScore){
+        console.log("Player was the winner.")
+    } else if (playerScore < computerScore) {
+        console.log("Computer was the winner.")
+    } else {
+        console.log("The game ends in a draw.")
+    }
 }
 
   console.log(game());
