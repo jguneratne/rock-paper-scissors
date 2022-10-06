@@ -1,13 +1,30 @@
 // Build getComputerChoice function that allows computer to make random selection
 
 function getComputerChoice() {
-    let selection = ["Rock", "Paper", "Scissors"];
+    let selection = ["rock", "paper", "scissors"];
     let random = selection[Math.floor(Math.random() * selection.length)];
 
     return random;
 }
 
-    // console.log(getComputerChoice());
+function getPlayerChoice() {
+    let selection = ["rock", "paper", "scissors"];
+    let checkInput = false;
+
+    while (checkInput == false) {
+        let choice = prompt("Ready to Play? Enter Rock, Paper or Scissors!", "Make your choice here.");
+        
+        if (choice == null) {
+            prompt = ("You must make a choice. Enter Rock, Paper or Scissors!", "Make your choice here.");
+        
+        } let choiceInLower = choice.toLowerCase();
+            if (selection.includes(choiceInLower)) {
+                checkInput == true;
+                return choiceInLower;
+            }
+        }
+    }
+
 
 /* Build playRound function that represents a single round of the game
 playerSelection = prompt
@@ -48,11 +65,8 @@ announce winner at the end
 
 function game() {
     for (let i = 0; i < 5; i++) {
-        playerSelection = prompt("Ready to Play? Enter Rock, Paper or Scissors!", "Make your choice here.");
+        playerSelection = getPlayerChoice();
         computerSelection = getComputerChoice();
-
-        playerSelection = playerSelection.toLowerCase();
-        computerSelection = computerSelection.toLowerCase();
 
         console.log(playRound(playerSelection, computerSelection));
     }
