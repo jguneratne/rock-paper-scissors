@@ -26,34 +26,45 @@ function getPlayerChoice() {
     }
 
 
-/* Build playRound function that represents a single round of the game
-playerSelection = prompt
-computerSelection = getComputerChoice()
-let score values for each player and a tie
-conditional statements comparing entries and incrementing scores
-*/ 
+// Build function that checks winner each round
 
-
-function playRound(playerSelection, computerSelection) { 
+function checkWinner(playerSelection, computerSelection) { 
         
     if 
     (playerSelection === computerSelection) {
-        return `This round was a tie! You both chose ${playerSelection}.`
+        return "Tie";
 
     } else if 
         (playerSelection === "rock" && computerSelection === "scissors" ||
         playerSelection === "paper" && computerSelection === "rock" ||
         playerSelection === "scissors" && computerSelection === "paper") {
     
-            return `You win this round! You ${playerSelection} beats their ${computerSelection}.`
+            return "Player";
 
     } else {
-            return `You loose this round! Their ${computerSelection} beats your ${playerSelection}.`
+            return "Computer;"
     }
 
 }
 
-//  console.log(playRound()); 
+
+/* Build playRound function that represents a single round of the game
+conditional statements checking winner of each round
+*/ 
+
+function playRound (playerSelection, computerSelection) {
+    let result = checkWinner(playerSelection, computerSelection)
+
+    if (result == "Tie") {
+        return `This round was a tie! You both chose ${playerSelection}.`
+
+    } else if (result == "Player") {
+        return `You win this round! You ${playerSelection} beats their ${computerSelection}.`
+
+    } else {
+        return `You loose this round! Their ${computerSelection} beats your ${playerSelection}.`
+    }
+}
 
 
 /* Build function that plays 5 rounds of game
@@ -64,6 +75,9 @@ announce winner at the end
 */
 
 function game() {
+    let playerScore = 0;
+    let computerScore = 0; 
+    
     for (let i = 0; i < 5; i++) {
         playerSelection = getPlayerChoice();
         computerSelection = getComputerChoice();
