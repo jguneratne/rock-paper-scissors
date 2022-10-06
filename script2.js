@@ -7,6 +7,8 @@ function getComputerChoice() {
     return random;
 }
 
+//Build function to take the player choice
+
 function getPlayerChoice() {
     let selection = ["rock", "paper", "scissors"];
     let checkInput = false;
@@ -68,9 +70,7 @@ function playRound (playerSelection, computerSelection) {
 
 
 /* Build function that plays 5 rounds of game
-let round = number
 increment rounds up to 5 rounds
-keep score
 announce winner at the end
 */
 
@@ -85,7 +85,9 @@ function game() {
         console.log(playRound(playerSelection, computerSelection));
     }
 
-    if(checkWinner(playerSelection, computerSelection) === "Player") {
+    if(checkWinner(playerSelection, computerSelection) === "Tie"){
+        (playerScore = playerScore) && (computerScore = computerScore);
+    } else if (checkWinner(playerSelection, computerSelection) === "Player") {
         playerScore++;
     } else if (checkWinner(playerScore, computerScore) === "Computer;") {
         computerScore++;
