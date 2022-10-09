@@ -57,11 +57,11 @@ conditional statements checking winner of each round
 function playRound (playerSelection, computerSelection) {
     let result = checkWinner(playerSelection, computerSelection)
 
-    if (result == "Tie") {
+    if (result === "Tie") {
         return `This round was a tie! You both chose ${playerSelection}.`
 
-    } else if (result == "Player") {
-        return `You win this round! You ${playerSelection} beats their ${computerSelection}.`
+    } else if (result === "Player") {
+        return `You win this round! Your ${playerSelection} beats their ${computerSelection}.`
 
     } else {
         return `You loose this round! Their ${computerSelection} beats your ${playerSelection}.`
@@ -75,31 +75,33 @@ announce winner at the end
 */
 
 function game() {
-    let playerScore = 0;
-    let computerScore = 0; 
+    let playerWin = 0;
+    let computerWin = 0;
+   
     
     for (let i = 0; i < 5; i++) {
         playerSelection = getPlayerChoice();
         computerSelection = getComputerChoice();
 
         console.log(playRound(playerSelection, computerSelection));
+
+        if (checkWinner(playerSelection, computerSelection) === "Player") {
+            playerWin++;
+    
+        } else if (checkWinner(playerSelection, computerSelection) === "Computer;") {
+            computerWin++;
     }
 
-    if(checkWinner(playerSelection, computerSelection) === "Tie"){
-        (playerScore = playerScore) && (computerScore = computerScore);
-    } else if (checkWinner(playerSelection, computerSelection) === "Player") {
-        playerScore++;
-    } else if (checkWinner(playerScore, computerScore) === "Computer;") {
-        computerScore++;
+       
     }
 
     console.log("------------");
     console.log("Game Over:");
-    if(playerScore > computerScore){
+    if(playerWin > computerWin){
         console.log("Player was the winner.")
-    } else if (playerScore < computerScore) {
+    } else if (playerWin < computerWin) {
         console.log("Computer was the winner.")
-    } else {
+    } else if (playerWin === computerWin) {
         console.log("The game ends in a draw.")
     }
 }
