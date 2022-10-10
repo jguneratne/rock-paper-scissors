@@ -1,3 +1,18 @@
+// Create 3 buttons, add event listeners to each button, calls playRound with correct player selection on each round
+
+// let buttons = document.querySelectorAll('button');
+// let playerSelection = [...buttons];
+// console.log(playerSelection);
+
+// playerSelection.forEach(button => {
+//     button.addEventListener('click', () => playRound(playerSelection, getComputerChoice()));
+//  })
+
+//  console.log(playerSelection);
+
+
+
+
 // Build getComputerChoice function that allows computer to make random selection
 
 function getComputerChoice() {
@@ -9,23 +24,18 @@ function getComputerChoice() {
 
 //Build function to take the player choice
 
-function getPlayerChoice() {
-    let selection = ["rock", "paper", "scissors"];
-    let checkInput = false;
+ function getPlayerChoice() {
+    let buttons = document.querySelectorAll('button');
+    let playerSelection = [...buttons];
+    console.log(playerSelection);
+    
+    playerSelection.forEach(button => {
+        button.addEventListener('click', () => playRound(playerSelection, getComputerChoice()));
+     })
 
-    while (checkInput == false) {
-        let choice = prompt("Ready to Play? Enter Rock, Paper or Scissors!", "Make your choice here.");
-        
-        if (choice == null) {
-            prompt = ("You must make a choice. Enter Rock, Paper or Scissors!", "Make your choice here.");
-        
-        } let choiceInLower = choice.toLowerCase();
-            if (selection.includes(choiceInLower)) {
-                checkInput == true;
-                return choiceInLower;
-            }
-        }
-    }
+     console.log(playerSelection);
+    
+}
 
 
 // Build function that checks winner each round
@@ -40,7 +50,6 @@ function checkWinner(playerSelection, computerSelection) {
         (playerSelection === "rock" && computerSelection === "scissors" ||
         playerSelection === "paper" && computerSelection === "rock" ||
         playerSelection === "scissors" && computerSelection === "paper") {
-    
             return "Player";
 
     } else {
@@ -55,6 +64,10 @@ conditional statements checking winner of each round
 */ 
 
 function playRound (playerSelection, computerSelection) {
+    
+    playerSelection = getPlayerChoice();
+    computerSelection = getComputerChoice();
+
     let result = checkWinner(playerSelection, computerSelection)
 
     if (result === "Tie") {
@@ -68,42 +81,43 @@ function playRound (playerSelection, computerSelection) {
     }
 }
 
+console.log(playRound());
 
 /* Build function that plays 5 rounds of game
 increment rounds up to 5 rounds
 announce winner at the end
 */
 
-function game() {
-    let playerWin = 0;
-    let computerWin = 0;
-   
+// function game() {
+//     let playerWin = 0;
+//     let computerWin = 0;
     
-    for (let i = 0; i < 5; i++) {
-        playerSelection = getPlayerChoice();
-        computerSelection = getComputerChoice();
+//    // for (let i = 0; i < 5; i++) {
+//         playerSelection = getPlayerChoice();
+//         computerSelection = getComputerChoice();
 
-        console.log(playRound(playerSelection, computerSelection));
+//         console.log(playRound(playerSelection, computerSelection));
 
-        if (checkWinner(playerSelection, computerSelection) === "Player") {
-            playerWin++;
+
+//         if (checkWinner(playerSelection, computerSelection) === "Player") {
+//             playerWin++;
     
-        } else if (checkWinner(playerSelection, computerSelection) === "Computer;") {
-            computerWin++;
-    }
-
+//         } else if (checkWinner(playerSelection, computerSelection) === "Computer") {
+//             computerWin++;
+//   //  }
        
-    }
+//     }
 
-    console.log("------------");
-    console.log("Game Over:");
-    if(playerWin > computerWin){
-        console.log("Player was the winner.")
-    } else if (playerWin < computerWin) {
-        console.log("Computer was the winner.")
-    } else if (playerWin === computerWin) {
-        console.log("The game ends in a draw.")
-    }
-}
+//     console.log("------------");
+//     console.log("Game Over:");
 
-  console.log(game());
+//     if(playerWin > computerWin){
+//         console.log("Player was the winner.")
+//     } else if (playerWin < computerWin) {
+//         console.log("Computer was the winner.")
+//     } else if (playerWin === computerWin) {
+//         console.log("The game ends in a draw.")
+//     }
+// }
+
+//   console.log(game());
