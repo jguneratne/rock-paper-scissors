@@ -1,18 +1,3 @@
-// Create 3 buttons, add event listeners to each button, calls playRound with correct player selection on each round
-
-// let buttons = document.querySelectorAll('button');
-// let playerSelection = [...buttons];
-// console.log(playerSelection);
-
-// playerSelection.forEach(button => {
-//     button.addEventListener('click', () => playRound(playerSelection, getComputerChoice()));
-//  })
-
-//  console.log(playerSelection);
-
-
-
-
 // Build getComputerChoice function that allows computer to make random selection
 
 function getComputerChoice() {
@@ -25,17 +10,19 @@ function getComputerChoice() {
 //Build function to take the player choice
 
  function getPlayerChoice() {
-    let buttons = document.querySelectorAll('button');
-    let playerSelection = [...buttons];
-    console.log(playerSelection);
-    
-    playerSelection.forEach(button => {
-        button.addEventListener('click', () => playRound(playerSelection, getComputerChoice()));
-     })
 
-     console.log(playerSelection);
-    
+        document.addEventListener('click', function (event) {
+            if (event.target.matches('.rock')) {
+                return "Rock";
+            } else if (event.target.matches ('.paper')) {
+                return "Paper";
+            } else if (event.target.matches) {
+                return "Scissors";
+            }
+        })
+        
 }
+
 
 
 // Build function that checks winner each round
