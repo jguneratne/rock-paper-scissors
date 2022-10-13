@@ -4,25 +4,41 @@ function getComputerChoice() {
     let selection = ["rock", "paper", "scissors"];
     let random = selection[Math.floor(Math.random() * selection.length)];
 
+    let computer = document.createElement('p');
+    computer.innerHTML = random;
+    let computerDisplay = document.querySelector('.computer-choice');
+    computerDisplay.appendChild(computer);
+
     return random;
 }
 
+
 //Build function to take the player choice
 
- function getPlayerChoice() {
+ function getPlayerChoice(playerSelection) {
 
-        document.addEventListener('click', function (event) {
-            if (event.target.matches('.rock')) {
-                return "Rock";
-            } else if (event.target.matches ('.paper')) {
-                return "Paper";
-            } else if (event.target.matches) {
-                return "Scissors";
-            }
-        })
-        
+
+    playerSelection = document.addEventListener('click', function (event) {
+        if (event.target.matches('.rock')) {
+            console.log(playerSelection);
+            //return "Rock";
+            
+        } else if (event.target.matches ('.paper')) {
+            console.log(playerSelection);
+            //return "Paper";
+
+        } else if (event.target.matches) {
+            console.log(playerSelection);
+            //return "Scissors";
+        }
+    })
+    
+    let player = document.createElement('p');
+    player.innerHTML = playerSelection;
+    let playerDisplay = document.querySelector('.player-choice');
+    playerDisplay.appendChild(player);
+
 }
-
 
 
 // Build function that checks winner each round
@@ -55,6 +71,7 @@ function playRound (playerSelection, computerSelection) {
     playerSelection = getPlayerChoice();
     computerSelection = getComputerChoice();
 
+
     let result = checkWinner(playerSelection, computerSelection)
 
     if (result === "Tie") {
@@ -66,6 +83,8 @@ function playRound (playerSelection, computerSelection) {
     } else {
         return `You loose this round! Their ${computerSelection} beats your ${playerSelection}.`
     }
+
+
 }
 
 console.log(playRound());
