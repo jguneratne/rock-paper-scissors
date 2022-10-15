@@ -1,0 +1,17 @@
+.rps, 
+.round, 
+.running,
+.result {
+    text-align: center;
+}
+
+.select {
+    text-align: center;
+}
+
+.choice,
+.score {
+    display: flex;
+    justify-content: space-around;
+}
+
