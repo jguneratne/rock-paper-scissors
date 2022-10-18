@@ -86,34 +86,37 @@ function checkWinner(result, playerSelection, computerSelection) {
 conditional statements checking winner of each round
 */ 
 
-function playRound (result, playerSelection, computerSelection, announce) {
+/* Build playRound function that represents a single round of the game
+conditional statements checking winner of each round
+*/ 
+
+function playRound (result) {
+
+    if (result === "Tie") {
+        announce = `This round was a tie! You both chose ${playerSelection}.`;
+
+    } else if (result === "Player") {
+        announce = `You win this round! Your ${playerSelection} beats their ${computerSelection}.`;
+
+    } else {
+        announce = `You loose this round! Their ${computerSelection} beats your ${playerSelection}.`;
     
-    result = checkWinner();
-    playerSelection = getPlayerChoice();
-    computerSelection = getComputerChoice();
+    }
 
+roundResult(announce);
+return announce;
 
-        result = checkWinner(playerSelection, computerSelection)
-
-            if (result === "Tie") {
-                announce = `This round was a tie! You both chose ${playerSelection}.`;
-
-            } else if (result === "Player") {
-                announce = `You win this round! Your ${playerSelection} beats their ${computerSelection}.`;
-
-            } else {
-                announce = `You loose this round! Their ${computerSelection} beats your ${playerSelection}.`;
-            
-            }
-
-    let roundResult = document.createElement('p');
-    roundResult.innerText = announce;
-    let resultDisplay = document.querySelector('.round-result');
-    resultDisplay.appendChild(roundResult);
-        
 }
 
-playRound();
+// Function to display result of Round as DOM element
+
+function roundResult() {
+let roundResult = document.createElement('p');
+roundResult.innerText = announce;
+let resultDisplay = document.querySelector('.round-result');
+resultDisplay.appendChild(roundResult);
+}
+
 
 /* Build function that plays 5 rounds of game
 increment rounds up to 5 rounds
