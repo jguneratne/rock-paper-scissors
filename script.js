@@ -119,26 +119,12 @@ function roundResult() {
 }
 
 
-/* Build function that plays 5 rounds of game
-increment rounds up to 5 rounds
-announce winner at the end
+/* Announce game winner by comparing player and computer scores
 */
 
-function game(playerSelection, computerSelection) {
-    let playerWin = 0;
-    let computerWin = 0;
-    let gameWinner; 
-
-    for (let i = 0; i < 5; i++) {
-
-        if (checkWinner(playerSelection, computerSelection) === "Player") {
-            playerWin++;
+function gameResult(playerWin, computerWin) {
     
-        } else if (checkWinner(playerSelection, computerSelection) === "Computer") {
-            computerWin++;
-        }
-   
-    }
+    let gameWinner; 
 
     if (playerWin > computerWin) {
         gameWinner = "Game Over! You win the game!"
@@ -151,8 +137,6 @@ function game(playerSelection, computerSelection) {
     playerScoreDisplay(playerWin);
     computerScoreDisplay(computerWin);
     gameResultDisplay(gameWinner);
-
-    return gameWinner;
 }
 
 
@@ -185,5 +169,4 @@ function gameResultDisplay (gameWinner) {
     gameResultDisplay.appendChild(gameResult);
 }
 
-console.log(game());
 
