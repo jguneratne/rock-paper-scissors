@@ -1,7 +1,7 @@
 .rps, 
 .round, 
-.running,
-.result {
+.score-board,
+.game-result {
     text-align: center;
 }
 
