@@ -82,9 +82,6 @@ function checkWinner(result, playerSelection, computerSelection) {
 
 }
 
-/* Build playRound function that represents a single round of the game
-conditional statements checking winner of each round
-*/ 
 
 /* Build playRound function that represents a single round of the game
 conditional statements checking winner of each round
@@ -123,36 +120,67 @@ increment rounds up to 5 rounds
 announce winner at the end
 */
 
-// function game() {
-//     let playerWin = 0;
-//     let computerWin = 0;
+function game() {
+    let playerWin = 0;
+    let computerWin = 0;
+    let gameWinner; 
     
-//    // for (let i = 0; i < 5; i++) {
-//         playerSelection = getPlayerChoice();
-//         computerSelection = getComputerChoice();
+   for (let i = 0; i < 5; i++) {
 
-//         console.log(playRound(playerSelection, computerSelection));
-
-
-//         if (checkWinner(playerSelection, computerSelection) === "Player") {
-//             playerWin++;
+        if (checkWinner(playerSelection, computerSelection) === "Player") {
+            playerWin++;
     
-//         } else if (checkWinner(playerSelection, computerSelection) === "Computer") {
-//             computerWin++;
-//   //  }
+        } else if (checkWinner(playerSelection, computerSelection) === "Computer") {
+            computerWin++;
+    }
+
+    console.log(playerWin, computerWin);
        
-//     }
+    }
 
-//     console.log("------------");
-//     console.log("Game Over:");
+    if(playerWin > computerWin){
+        gameWinner = "Game Over! You win the game!"
+    } else if (playerWin < computerWin) {
+        gameWinner = "Game Over! Computer wins the game!"
+    } else if (playerWin === computerWin) {
+        gameWinner = "Game Over! The game ends in a draw."
+    }
 
-//     if(playerWin > computerWin){
-//         console.log("Player was the winner.")
-//     } else if (playerWin < computerWin) {
-//         console.log("Computer was the winner.")
-//     } else if (playerWin === computerWin) {
-//         console.log("The game ends in a draw.")
-//     }
-// }
+    playerScoreDisplay(playerWin);
+    computerScoreDisplay(computerWin);
+    gameResultDisplay(gameWinner);
 
-//   console.log(game());
+    return gameWinner;
+}
+
+// Create function to display Player Score as DOM element
+
+function playerScoreDisplay () {
+    let playerScore = document.createElement('p');
+    playerScore.innerText = playerWin;
+    let playerDisplay = document.querySelector('.player-score');
+    playerDisplay.appendChild(playerScore);
+}
+
+
+// Create function to display Computer Score as DOM element
+
+function computerScoreDisplay () {
+    let computerScore = document.createElement('p');
+    computerScore.innerText = computerWin;
+    let computerDisplay = document.querySelector('.computer-score');
+    computerDisplay.appendChild(computerScore);
+}
+
+
+// Create function to display Game Result as DOM element
+
+function gameResultDisplay () {
+    let gameResult = document.createElement('p');
+    gameResult.innerText = gameWinner;
+    let gameResultDisplay = document.querySelector('.game-result');
+    gameResultDisplay.appendChild(gameResult);
+}
+
+   console.log(game());
+
