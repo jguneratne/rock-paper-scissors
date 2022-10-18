@@ -1,27 +1,28 @@
+
 const buttonsContainer = document.getElementById('button')
-buttonsContainer.addEventListener('click', function (event) {
-    const playerSelection = getPlayerChoice(event);
-    const computerSelection = getComputerChoice();
-    const result = checkWinner(playerSelection, computerSelection);
-    playRound(result, playerSelection, computerSelection);
+    buttonsContainer.addEventListener('click', function (event) {
+        const playerSelection = getPlayerChoice(event);
+        const computerSelection = getComputerChoice();
+        const result = checkWinner(playerSelection, computerSelection);
+        playRound(result, playerSelection, computerSelection);
 });
 
 // Build getComputerChoice function that allows computer to make random selection
 
 function getComputerChoice() {
-        
-        let selection = ["Rock", "Paper", "Scissors"];
+    
+    let selection = ["Rock", "Paper", "Scissors"];
 
-        computerSelection = selection[Math.floor(Math.random() * selection.length)];
+    computerSelection = selection[Math.floor(Math.random() * selection.length)];
 
-        displayComputerChoice(computerSelection);
-        return computerSelection;
+    displayComputerChoice(computerSelection);
+    return computerSelection;
 }
+
 
 // Separate computer DOM element from getComputerChoice
 
 function displayComputerChoice(computerSelection) {
-
     let computer = document.createElement('p');
     computer.innerText = computerSelection;
     let computerDisplay = document.querySelector('.computer-choice');
@@ -31,55 +32,58 @@ function displayComputerChoice(computerSelection) {
 
 //Build function to take the player choice
 
- function getPlayerChoice(event) {
+function getPlayerChoice(event) {
 
-        if (event.target.matches('.rock')) {
-            playerSelection = "Rock";
-            // console.log(playerSelection);
+    if (event.target.matches('.rock')) {
+        playerSelection = "Rock";
+        // console.log(playerSelection);
 
-        } else if (event.target.matches ('.paper')) {
-            playerSelection = "Paper";
-            // console.log(playerSelection);
+    } else if (event.target.matches ('.paper')) {
+        playerSelection = "Paper";
+        // console.log(playerSelection);
 
-        } else if (event.target.matches) {
-            playerSelection = "Scissors";
-            // console.log(playerSelection);
-        }
+    } else if (event.target.matches) {
+        playerSelection = "Scissors";
+        // console.log(playerSelection);
+    }
 
-    displayPlayerChoice(playerSelection);
-    return playerSelection;
+displayPlayerChoice(playerSelection);
+return playerSelection;
 }
+
 
 // Separate player DOM element from getPlayerChoice
 
 function displayPlayerChoice(playerSelection) {
-
     let player = document.createElement('p');
     player.innerText = playerSelection;
     let playerDisplay = document.querySelector('.player-choice');
     playerDisplay.appendChild(player);
 }
 
+
 // Build function that checks winner each round
 
-function checkWinner(result, playerSelection, computerSelection) { 
-        
+function checkWinner(playerSelection, computerSelection) { 
+
     if 
-    (playerSelection === computerSelection) {
-        result = "Tie";
+        (playerSelection === computerSelection) {
+            result = "Tie";
+            console.log(result);
 
-    } else if 
-        (playerSelection === "rock" && computerSelection === "scissors" ||
-        playerSelection === "paper" && computerSelection === "rock" ||
-        playerSelection === "scissors" && computerSelection === "paper") {
-            result = "Player";
+        } else if 
+            (playerSelection === "rock" && computerSelection === "scissors" ||
+            playerSelection === "paper" && computerSelection === "rock" ||
+            playerSelection === "scissors" && computerSelection === "paper") {
+                result = "Player";
+                console.log(result);
 
-    } else {
-            result = "Computer";
-    }
-    console.log(result)
-    return result;
+        } else {
+                result = "Computer";
+                console.log(result);
+        }
 
+        return result;
 }
 
 
@@ -92,26 +96,26 @@ function playRound (result) {
     if (result === "Tie") {
         announce = `This round was a tie! You both chose ${playerSelection}.`;
 
-    } else if (result === "Player") {
-        announce = `You win this round! Your ${playerSelection} beats their ${computerSelection}.`;
+        } else if (result === "Player") {
+            announce = `You win this round! Your ${playerSelection} beats their ${computerSelection}.`;
 
-    } else {
-        announce = `You loose this round! Their ${computerSelection} beats your ${playerSelection}.`;
+        } else {
+            announce = `You loose this round! Their ${computerSelection} beats your ${playerSelection}.`;
+            
+        }
+            
+    roundResult(announce);
+    return announce;
     
-    }
-
-roundResult(announce);
-return announce;
-
 }
 
 // Function to display result of Round as DOM element
 
 function roundResult() {
-let roundResult = document.createElement('p');
-roundResult.innerText = announce;
-let resultDisplay = document.querySelector('.round-result');
-resultDisplay.appendChild(roundResult);
+    let roundResult = document.createElement('p');
+    roundResult.innerText = announce;
+    let resultDisplay = document.querySelector('.round-result');
+    resultDisplay.appendChild(roundResult);
 }
 
 
@@ -120,25 +124,23 @@ increment rounds up to 5 rounds
 announce winner at the end
 */
 
-function game() {
+function game(playerSelection, computerSelection) {
     let playerWin = 0;
     let computerWin = 0;
     let gameWinner; 
-    
-   for (let i = 0; i < 5; i++) {
+
+    for (let i = 0; i < 5; i++) {
 
         if (checkWinner(playerSelection, computerSelection) === "Player") {
             playerWin++;
     
         } else if (checkWinner(playerSelection, computerSelection) === "Computer") {
             computerWin++;
+        }
+   
     }
 
-    console.log(playerWin, computerWin);
-       
-    }
-
-    if(playerWin > computerWin){
+    if (playerWin > computerWin) {
         gameWinner = "Game Over! You win the game!"
     } else if (playerWin < computerWin) {
         gameWinner = "Game Over! Computer wins the game!"
@@ -153,9 +155,10 @@ function game() {
     return gameWinner;
 }
 
+
 // Create function to display Player Score as DOM element
 
-function playerScoreDisplay () {
+function playerScoreDisplay (playerWin) {
     let playerScore = document.createElement('p');
     playerScore.innerText = playerWin;
     let playerDisplay = document.querySelector('.player-score');
@@ -165,7 +168,7 @@ function playerScoreDisplay () {
 
 // Create function to display Computer Score as DOM element
 
-function computerScoreDisplay () {
+function computerScoreDisplay (computerWin) {
     let computerScore = document.createElement('p');
     computerScore.innerText = computerWin;
     let computerDisplay = document.querySelector('.computer-score');
@@ -175,12 +178,12 @@ function computerScoreDisplay () {
 
 // Create function to display Game Result as DOM element
 
-function gameResultDisplay () {
+function gameResultDisplay (gameWinner) {
     let gameResult = document.createElement('p');
     gameResult.innerText = gameWinner;
     let gameResultDisplay = document.querySelector('.game-result');
     gameResultDisplay.appendChild(gameResult);
 }
 
-   console.log(game());
+console.log(game());
 
