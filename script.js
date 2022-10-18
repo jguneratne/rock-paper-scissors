@@ -1,3 +1,11 @@
+const buttonsContainer = document.getElementById('button')
+buttonsContainer.addEventListener('click', function (event) {
+    //getComputerChoice();
+    //getPlayerChoice(event);
+    //checkWinner(getPlayerChoice(event), getComputerChoice());
+    playRound(checkWinner(getPlayerChoice(event), getComputerChoice()));
+});
+
 // Build getComputerChoice function that allows computer to make random selection
 
 function getComputerChoice() {
