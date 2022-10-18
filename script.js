@@ -1,67 +1,64 @@
 const buttonsContainer = document.getElementById('button')
 buttonsContainer.addEventListener('click', function (event) {
-    //getComputerChoice();
-    //getPlayerChoice(event);
-    //checkWinner(getPlayerChoice(event), getComputerChoice());
-    playRound(checkWinner(getPlayerChoice(event), getComputerChoice()));
+    const playerSelection = getPlayerChoice(event);
+    const computerSelection = getComputerChoice();
+    const result = checkWinner(playerSelection, computerSelection);
+    playRound(result, playerSelection, computerSelection);
 });
 
 // Build getComputerChoice function that allows computer to make random selection
 
 function getComputerChoice() {
         
-    let selection = ["Rock", "Paper", "Scissors"];
+        let selection = ["Rock", "Paper", "Scissors"];
 
-    let computerSelection = selection[Math.floor(Math.random() * selection.length)];
+        computerSelection = selection[Math.floor(Math.random() * selection.length)];
 
-    displayComputerChoice(computerSelection);
-    return computerSelection;
+        displayComputerChoice(computerSelection);
+        return computerSelection;
 }
 
 // Separate computer DOM element from getComputerChoice
 
 function displayComputerChoice(computerSelection) {
 
-let computer = document.createElement('p');
-computer.innerText = computerSelection;
-let computerDisplay = document.querySelector('.computer-choice');
-computerDisplay.appendChild(computer);
+    let computer = document.createElement('p');
+    computer.innerText = computerSelection;
+    let computerDisplay = document.querySelector('.computer-choice');
+    computerDisplay.appendChild(computer);
 }
 
 
 //Build function to take the player choice
 
-function getPlayerChoice(event) {
+ function getPlayerChoice(event) {
 
-let playerSelection;
+        if (event.target.matches('.rock')) {
+            playerSelection = "Rock";
+            // console.log(playerSelection);
 
-    if (event.target.matches('.rock')) {
-        playerSelection = "Rock";
-        // console.log(playerSelection);
+        } else if (event.target.matches ('.paper')) {
+            playerSelection = "Paper";
+            // console.log(playerSelection);
 
-    } else if (event.target.matches ('.paper')) {
-        playerSelection = "Paper";
-        // console.log(playerSelection);
+        } else if (event.target.matches) {
+            playerSelection = "Scissors";
+            // console.log(playerSelection);
+        }
 
-    } else if (event.target.matches) {
-        playerSelection = "Scissors";
-        // console.log(playerSelection);
-    }
-
-displayPlayerChoice(playerSelection);
-return playerSelection;
+    displayPlayerChoice(playerSelection);
+    return playerSelection;
 }
 
 // Separate player DOM element from getPlayerChoice
 
 function displayPlayerChoice(playerSelection) {
 
-let player = document.createElement('p');
-player.innerText = playerSelection;
-let playerDisplay = document.querySelector('.player-choice');
-playerDisplay.appendChild(player);
+    let player = document.createElement('p');
+    player.innerText = playerSelection;
+    let playerDisplay = document.querySelector('.player-choice');
+    playerDisplay.appendChild(player);
 }
-
 
 // Build function that checks winner each round
 
