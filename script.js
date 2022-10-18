@@ -1,93 +1,114 @@
 // Build getComputerChoice function that allows computer to make random selection
 
 function getComputerChoice() {
-    let selection = ["rock", "paper", "scissors"];
-    let random = selection[Math.floor(Math.random() * selection.length)];
+        
+    let selection = ["Rock", "Paper", "Scissors"];
 
-    let computer = document.createElement('p');
-    computer.innerHTML = random;
-    let computerDisplay = document.querySelector('.computer-choice');
-    computerDisplay.appendChild(computer);
+    let computerSelection = selection[Math.floor(Math.random() * selection.length)];
 
-    return random;
+    displayComputerChoice(computerSelection);
+    return computerSelection;
+}
+
+// Separate computer DOM element from getComputerChoice
+
+function displayComputerChoice(computerSelection) {
+
+let computer = document.createElement('p');
+computer.innerText = computerSelection;
+let computerDisplay = document.querySelector('.computer-choice');
+computerDisplay.appendChild(computer);
 }
 
 
 //Build function to take the player choice
 
- function getPlayerChoice(playerSelection) {
+function getPlayerChoice(event) {
 
+let playerSelection;
 
-    playerSelection = document.addEventListener('click', function (event) {
-        if (event.target.matches('.rock')) {
-            console.log(playerSelection);
-            //return "Rock";
-            
-        } else if (event.target.matches ('.paper')) {
-            console.log(playerSelection);
-            //return "Paper";
+    if (event.target.matches('.rock')) {
+        playerSelection = "Rock";
+        // console.log(playerSelection);
 
-        } else if (event.target.matches) {
-            console.log(playerSelection);
-            //return "Scissors";
-        }
-    })
-    
-    let player = document.createElement('p');
-    player.innerHTML = playerSelection;
-    let playerDisplay = document.querySelector('.player-choice');
-    playerDisplay.appendChild(player);
+    } else if (event.target.matches ('.paper')) {
+        playerSelection = "Paper";
+        // console.log(playerSelection);
 
+    } else if (event.target.matches) {
+        playerSelection = "Scissors";
+        // console.log(playerSelection);
+    }
+
+displayPlayerChoice(playerSelection);
+return playerSelection;
+}
+
+// Separate player DOM element from getPlayerChoice
+
+function displayPlayerChoice(playerSelection) {
+
+let player = document.createElement('p');
+player.innerText = playerSelection;
+let playerDisplay = document.querySelector('.player-choice');
+playerDisplay.appendChild(player);
 }
 
 
 // Build function that checks winner each round
 
-function checkWinner(playerSelection, computerSelection) { 
+function checkWinner(result, playerSelection, computerSelection) { 
         
     if 
     (playerSelection === computerSelection) {
-        return "Tie";
+        result = "Tie";
 
     } else if 
         (playerSelection === "rock" && computerSelection === "scissors" ||
         playerSelection === "paper" && computerSelection === "rock" ||
         playerSelection === "scissors" && computerSelection === "paper") {
-            return "Player";
+            result = "Player";
 
     } else {
-            return "Computer;"
+            result = "Computer";
     }
+    console.log(result)
+    return result;
 
 }
-
 
 /* Build playRound function that represents a single round of the game
 conditional statements checking winner of each round
 */ 
 
-function playRound (playerSelection, computerSelection) {
+function playRound (result, playerSelection, computerSelection, announce) {
     
+    result = checkWinner();
     playerSelection = getPlayerChoice();
     computerSelection = getComputerChoice();
 
 
-    let result = checkWinner(playerSelection, computerSelection)
+        result = checkWinner(playerSelection, computerSelection)
 
-    if (result === "Tie") {
-        return `This round was a tie! You both chose ${playerSelection}.`
+            if (result === "Tie") {
+                announce = `This round was a tie! You both chose ${playerSelection}.`;
 
-    } else if (result === "Player") {
-        return `You win this round! Your ${playerSelection} beats their ${computerSelection}.`
+            } else if (result === "Player") {
+                announce = `You win this round! Your ${playerSelection} beats their ${computerSelection}.`;
 
-    } else {
-        return `You loose this round! Their ${computerSelection} beats your ${playerSelection}.`
-    }
+            } else {
+                announce = `You loose this round! Their ${computerSelection} beats your ${playerSelection}.`;
+            
+            }
 
-
+    let roundResult = document.createElement('p');
+    roundResult.innerText = announce;
+    let resultDisplay = document.querySelector('.round-result');
+    resultDisplay.appendChild(roundResult);
+        
 }
 
-console.log(playRound());
+playRound();
 
 /* Build function that plays 5 rounds of game
 increment rounds up to 5 rounds
