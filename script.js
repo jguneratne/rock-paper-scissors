@@ -66,24 +66,27 @@ function displayPlayerChoice(playerSelection) {
 
 function checkWinner(playerSelection, computerSelection) { 
 
+    let playerWin = 0;
+    let computerWin = 0;
+
     if 
-        (playerSelection === computerSelection) {
-            result = "Tie";
-            console.log(result);
+    (playerSelection === computerSelection) {
+        result = "Tie";
 
-        } else if 
-            (playerSelection === "rock" && computerSelection === "scissors" ||
-            playerSelection === "paper" && computerSelection === "rock" ||
-            playerSelection === "scissors" && computerSelection === "paper") {
-                result = "Player";
-                console.log(result);
+    } else if 
+        (playerSelection === "rock" && computerSelection === "scissors" ||
+        playerSelection === "paper" && computerSelection === "rock" ||
+        playerSelection === "scissors" && computerSelection === "paper") {
+            playerWin++
+            result = "Player";
 
-        } else {
-                result = "Computer";
-                console.log(result);
-        }
-
-        return result;
+    } else {
+            computerWin++
+            result = "Computer";
+    }
+    
+    gameResult(playerWin, computerWin);
+    return result;
 }
 
 
