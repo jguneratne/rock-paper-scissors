@@ -12,7 +12,6 @@ buttonsContainer.addEventListener('click', function (event) {
 function getComputerChoice() {
     
     let selection = ["Rock", "Paper", "Scissors"];
-
     computerSelection = selection[Math.floor(Math.random() * selection.length)];
 
     displayComputerChoice(computerSelection);
@@ -42,7 +41,6 @@ return playerSelection;
 }
 
 
-
 // Build function that checks winner each round
 
 function checkWinner(playerSelection, computerSelection) { 
@@ -66,12 +64,18 @@ if
         result = "Computer";
 }
 
-if(wins >= 5) {
-    return
+playerScoreDisplay(playerWin);
+computerScoreDisplay(computerWin);
+scoreTally(playerWin, computerWin);
+gameResult(playerWin, computerWin);
+
+return Math.max(playerWin, computerWin);
 }
 
-gameResult(playerWin, computerWin);
-return result;
+function scoreTally(playerWin, computerWin) {
+if(playerWin || computerWin >= 5) {
+    return
+}
 }
 
 
@@ -99,15 +103,6 @@ return announce;
     
 }
 
-// Function to display result of Round as DOM element
-
-function roundResult(announce) {
-let roundResult = document.createElement('p');
-roundResult.innerText = announce;
-let resultDisplay = document.querySelector('.round-result');
-resultDisplay.appendChild(roundResult);
-}
-
 
 /* Announce game winner by comparing player and computer scores
 */
@@ -128,6 +123,7 @@ playerScoreDisplay(playerWin);
 computerScoreDisplay(computerWin);
 gameResultDisplay(gameWinner);
 }
+
 
 
 // CREATE DOM ELEMENTS
@@ -156,34 +152,34 @@ playerDisplay.appendChild(player);
 // Create function to display Player Score as DOM element
 
 function playerScoreDisplay(playerWin) {
-    let playerScore = document.createElement('p');
-    playerScore.innerText = playerWin;
-    let playerDisplay = document.querySelector('.player-score');
-    playerDisplay.appendChild(playerScore);
+let playerScore = document.createElement('p');
+playerScore.innerText = playerWin;
+let playerDisplay = document.querySelector('.player-score');
+playerDisplay.appendChild(playerScore);
 
-    document.querySelector('player-score').textContent = `Score: ${playerWin}`
+document.querySelector('.player-score').textContent = `Score: ${playerWin}`
 }
 
 
 // Create function to display Computer Score as DOM element
 
 function computerScoreDisplay(computerWin) {
-    let computerScore = document.createElement('p');
-    computerScore.innerText = computerWin;
-    let computerDisplay = document.querySelector('.computer-score');
-    computerDisplay.appendChild(computerScore);
+let computerScore = document.createElement('p');
+computerScore.innerText = computerWin;
+let computerDisplay = document.querySelector('.computer-score');
+computerDisplay.appendChild(computerScore);
 
-    document.querySelector('computer-score').textContent = `Score: ${computerWin}`
+document.querySelector('.computer-score').textContent = `Score: ${computerWin}`
 }
 
 // Function to display result of Round as DOM element
 
 function roundResult(announce) {
-    let roundResult = document.createElement('p');
-    roundResult.innerText = announce;
-    let resultDisplay = document.querySelector('.round-result');
-    resultDisplay.appendChild(roundResult);
- }
+let roundResult = document.createElement('p');
+roundResult.innerText = announce;
+let resultDisplay = document.querySelector('.round-result');
+resultDisplay.appendChild(roundResult);
+}
 
 
 // Create function to display Game Result as DOM element
