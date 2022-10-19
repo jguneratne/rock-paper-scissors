@@ -156,20 +156,24 @@ playerDisplay.appendChild(player);
 // Create function to display Player Score as DOM element
 
 function playerScoreDisplay(playerWin) {
-let playerScore = document.createElement('p');
-playerScore.innerText = playerWin;
-let playerDisplay = document.querySelector('.player-score');
-playerDisplay.appendChild(playerScore);
+    let playerScore = document.createElement('p');
+    playerScore.innerText = playerWin;
+    let playerDisplay = document.querySelector('.player-score');
+    playerDisplay.appendChild(playerScore);
+
+    document.querySelector('player-score').textContent = `Score: ${playerWin}`
 }
 
 
 // Create function to display Computer Score as DOM element
 
 function computerScoreDisplay(computerWin) {
-let computerScore = document.createElement('p');
-computerScore.innerText = computerWin;
-let computerDisplay = document.querySelector('.computer-score');
-computerDisplay.appendChild(computerScore);
+    let computerScore = document.createElement('p');
+    computerScore.innerText = computerWin;
+    let computerDisplay = document.querySelector('.computer-score');
+    computerDisplay.appendChild(computerScore);
+
+    document.querySelector('computer-score').textContent = `Score: ${computerWin}`
 }
 
 
