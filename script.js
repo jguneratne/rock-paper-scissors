@@ -176,6 +176,15 @@ function computerScoreDisplay(computerWin) {
     document.querySelector('computer-score').textContent = `Score: ${computerWin}`
 }
 
+// Function to display result of Round as DOM element
+
+function roundResult(announce) {
+    let roundResult = document.createElement('p');
+    roundResult.innerText = announce;
+    let resultDisplay = document.querySelector('.round-result');
+    resultDisplay.appendChild(roundResult);
+ }
+
 
 // Create function to display Game Result as DOM element
 
