@@ -1,9 +1,9 @@
 
 const buttonsContainer = document.getElementById('button')
-buttonsContainer.addEventListener('click', function (event) {
-const playerSelection = getPlayerChoice(event);
-const computerSelection = getComputerChoice();
-const result = checkWinner(playerSelection, computerSelection);
+    buttonsContainer.addEventListener('click', function (event) {
+    const playerSelection = getPlayerChoice(event);
+    const computerSelection = getComputerChoice();
+    const result = checkWinner(playerSelection, computerSelection);
 });
 
 
@@ -11,11 +11,11 @@ const result = checkWinner(playerSelection, computerSelection);
 
 function getComputerChoice() {
 
-let selection = ["Rock", "Paper", "Scissors"];
-computerSelection = selection[Math.floor(Math.random() * selection.length)];
+    let selection = ["Rock", "Paper", "Scissors"];
+    computerSelection = selection[Math.floor(Math.random() * selection.length)];
 
-displayComputerChoice(computerSelection);
-return computerSelection;
+    displayComputerChoice(computerSelection);
+    return computerSelection;
 }
 
 
@@ -23,18 +23,18 @@ return computerSelection;
 
 function getPlayerChoice(event) {
 
-if (event.target.matches('.rock')) {
-    playerSelection = "Rock";
+    if (event.target.matches('.rock')) {
+        playerSelection = "Rock";
 
-} else if (event.target.matches('.paper')) {
-    playerSelection = "Paper";
+    } else if (event.target.matches('.paper')) {
+        playerSelection = "Paper";
 
-} else if (event.target.matches('.scissors')) {
-    playerSelection = "Scissors";
-}
+    } else if (event.target.matches('.scissors')) {
+        playerSelection = "Scissors";
+    }
 
-displayPlayerChoice(playerSelection);
-return playerSelection;
+    displayPlayerChoice(playerSelection);
+    return playerSelection;
 }
 
 
@@ -42,8 +42,8 @@ return playerSelection;
 
 function checkWinner(playerSelection, computerSelection) { 
 
-let playerWin = 0;
-let computerWin = 0;
+    let playerWin = 0;
+    let computerWin = 0;
 
     if 
     (playerSelection === computerSelection) {
@@ -62,10 +62,10 @@ let computerWin = 0;
     }
 
 
-playRound(result);
-playerScoreDisplay(playerWin);
-computerScoreDisplay(computerWin);
-// gameResult(playerWin, computerWin);
+    playRound(result);
+    playerScoreDisplay(playerWin);
+    computerScoreDisplay(computerWin);
+    // gameResult(playerWin, computerWin);
 
 }
 
@@ -122,41 +122,41 @@ return announce;
 // Build function to display computer DOM element from getComputerChoice
 
 function displayComputerChoice(computerSelection) {
-document.querySelector('.computer-choice').textContent = `Computer Choice: ${computerSelection}`;
+    document.querySelector('.computer-choice').textContent = `Computer Choice: ${computerSelection}`;
 }
 
 
 // Build function to display player DOM element from getPlayerChoice
 
 function displayPlayerChoice(playerSelection) {
-document.querySelector('.player-choice').textContent = `Player Choice: ${playerSelection}`;
+    document.querySelector('.player-choice').textContent = `Player Choice: ${playerSelection}`;
 }
 
 // Create function to display Player Score as DOM element
 
 function playerScoreDisplay(playerWin) {
-document.querySelector('.player-score').textContent = `Player Score: ${playerWin}`;
+    document.querySelector('.player-score').textContent = `Player Score: ${playerWin}`;
 }
 
 
 // Create function to display Computer Score as DOM element
 
 function computerScoreDisplay(computerWin) {
-document.querySelector('.computer-score').textContent = `Computer Score: ${computerWin}`;
+    document.querySelector('.computer-score').textContent = `Computer Score: ${computerWin}`;
 }
 
 // Function to display result of Round as DOM element
 
 function roundResult(announce) {
-document.querySelector('.round-result').textContent = `${announce}`;
+    document.querySelector('.round-result').textContent = `${announce}`;
 }
 
 // Create function to display Game Result as DOM element
 
 function gameResultDisplay(gameWinner) {
-let gameResult = document.createElement('p');
-gameResult.innerText = gameWinner;
-let gameResultDisplay = document.querySelector('.game-result');
-gameResultDisplay.appendChild(gameResult);
+    let gameResult = document.createElement('p');
+    gameResult.innerText = gameWinner;
+    let gameResultDisplay = document.querySelector('.game-result');
+    gameResultDisplay.appendChild(gameResult);
 }
 
