@@ -1,21 +1,21 @@
 
 const buttonsContainer = document.getElementById('button')
 buttonsContainer.addEventListener('click', function (event) {
-    const playerSelection = getPlayerChoice(event);
-    const computerSelection = getComputerChoice();
-    const result = checkWinner(playerSelection, computerSelection);
-    playRound(result, playerSelection, computerSelection);
+const playerSelection = getPlayerChoice(event);
+const computerSelection = getComputerChoice();
+const result = checkWinner(playerSelection, computerSelection);
 });
+
 
 // Build getComputerChoice function that allows computer to make random selection
 
 function getComputerChoice() {
-    
-    let selection = ["Rock", "Paper", "Scissors"];
-    computerSelection = selection[Math.floor(Math.random() * selection.length)];
 
-    displayComputerChoice(computerSelection);
-    return computerSelection;
+let selection = ["Rock", "Paper", "Scissors"];
+computerSelection = selection[Math.floor(Math.random() * selection.length)];
+
+displayComputerChoice(computerSelection);
+return computerSelection;
 }
 
 
@@ -23,18 +23,15 @@ function getComputerChoice() {
 
 function getPlayerChoice(event) {
 
-    if (event.target.matches('.rock')) {
-        playerSelection = "Rock";
-        // console.log(playerSelection);
+if (event.target.matches('.rock')) {
+    playerSelection = "Rock";
 
-    } else if (event.target.matches ('.paper')) {
-        playerSelection = "Paper";
-        // console.log(playerSelection);
+} else if (event.target.matches('.paper')) {
+    playerSelection = "Paper";
 
-    } else if (event.target.matches) {
-        playerSelection = "Scissors";
-        // console.log(playerSelection);
-    }
+} else if (event.target.matches('.scissors')) {
+    playerSelection = "Scissors";
+}
 
 displayPlayerChoice(playerSelection);
 return playerSelection;
@@ -48,34 +45,28 @@ function checkWinner(playerSelection, computerSelection) {
 let playerWin = 0;
 let computerWin = 0;
 
-if 
-(playerSelection === computerSelection) {
-    result = "Tie";
+    if 
+    (playerSelection === computerSelection) {
+        result = "Tie";
 
-} else if 
-    (playerSelection === "rock" && computerSelection === "scissors" ||
-    playerSelection === "paper" && computerSelection === "rock" ||
-    playerSelection === "scissors" && computerSelection === "paper") {
-        playerWin++
-        result = "Player";
+    } else if 
+        (playerSelection === "Rock" && computerSelection === "Scissors" ||
+        playerSelection === "Paper" && computerSelection === "Rock" ||
+        playerSelection === "Scissors" && computerSelection === "Paper") {
+            playerWin += 1;
+            result = "Player";
 
-} else {
-        computerWin++
-        result = "Computer";
-}
+    } else {
+            computerWin += 1;
+            result = "Computer";
+    }
 
+
+playRound(result);
 playerScoreDisplay(playerWin);
 computerScoreDisplay(computerWin);
-scoreTally(playerWin, computerWin);
-gameResult(playerWin, computerWin);
+// gameResult(playerWin, computerWin);
 
-return Math.max(playerWin, computerWin);
-}
-
-function scoreTally(playerWin, computerWin) {
-if(playerWin || computerWin >= 5) {
-    return
-}
 }
 
 
@@ -97,32 +88,32 @@ if (result === "Tie") {
         announce = `You loose this round! Their ${computerSelection} beats your ${playerSelection}.`;
         
     }
-        
+
 roundResult(announce);
 return announce;
-    
+
 }
 
 
 /* Announce game winner by comparing player and computer scores
 */
 
-function gameResult(playerWin, computerWin) {
+// function gameResult(playerWin, computerWin) {
 
-let gameWinner; 
+// let gameWinner; 
 
-if (playerWin > computerWin) {
-    gameWinner = "Game Over! You win the game!"
-} else if (playerWin < computerWin) {
-    gameWinner = "Game Over! Computer wins the game!"
-} else if (playerWin === computerWin) {
-    gameWinner = "Game Over! The game ends in a draw."
-}
+// if (playerWin > computerWin) {
+//     gameWinner = "Game Over! You win the game!"
+// } else if (playerWin < computerWin) {
+//     gameWinner = "Game Over! Computer wins the game!"
+// } else if (playerWin === computerWin) {
+//     gameWinner = "Game Over! The game ends in a draw."
+// }
 
-playerScoreDisplay(playerWin);
-computerScoreDisplay(computerWin);
-gameResultDisplay(gameWinner);
-}
+// playerScoreDisplay(playerWin);
+// computerScoreDisplay(computerWin);
+// gameResultDisplay(gameWinner);
+// }
 
 
 
@@ -131,64 +122,41 @@ gameResultDisplay(gameWinner);
 // Build function to display computer DOM element from getComputerChoice
 
 function displayComputerChoice(computerSelection) {
-
-let computer = document.createElement('p');
-computer.innerText = computerSelection;
-let computerDisplay = document.querySelector('.computer-choice');
-computerDisplay.appendChild(computer);
+document.querySelector('.computer-choice').textContent = `Computer Choice: ${computerSelection}`;
 }
 
 
 // Build function to display player DOM element from getPlayerChoice
 
 function displayPlayerChoice(playerSelection) {
-
-let player = document.createElement('p');
-player.innerText = playerSelection;
-let playerDisplay = document.querySelector('.player-choice');
-playerDisplay.appendChild(player);
+document.querySelector('.player-choice').textContent = `Player Choice: ${playerSelection}`;
 }
 
 // Create function to display Player Score as DOM element
 
 function playerScoreDisplay(playerWin) {
-let playerScore = document.createElement('p');
-playerScore.innerText = playerWin;
-let playerDisplay = document.querySelector('.player-score');
-playerDisplay.appendChild(playerScore);
-
-document.querySelector('.player-score').textContent = `Score: ${playerWin}`
+document.querySelector('.player-score').textContent = `Player Score: ${playerWin}`;
 }
 
 
 // Create function to display Computer Score as DOM element
 
 function computerScoreDisplay(computerWin) {
-let computerScore = document.createElement('p');
-computerScore.innerText = computerWin;
-let computerDisplay = document.querySelector('.computer-score');
-computerDisplay.appendChild(computerScore);
-
-document.querySelector('.computer-score').textContent = `Score: ${computerWin}`
+document.querySelector('.computer-score').textContent = `Computer Score: ${computerWin}`;
 }
 
 // Function to display result of Round as DOM element
 
 function roundResult(announce) {
-let roundResult = document.createElement('p');
-roundResult.innerText = announce;
-let resultDisplay = document.querySelector('.round-result');
-resultDisplay.appendChild(roundResult);
+document.querySelector('.round-result').textContent = `${announce}`;
 }
-
 
 // Create function to display Game Result as DOM element
 
-function gameResultDisplay (gameWinner) {
+function gameResultDisplay(gameWinner) {
 let gameResult = document.createElement('p');
 gameResult.innerText = gameWinner;
 let gameResultDisplay = document.querySelector('.game-result');
 gameResultDisplay.appendChild(gameResult);
 }
-
 
