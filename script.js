@@ -66,7 +66,7 @@ function checkWinner(playerSelection, computerSelection) {
     playRound(result);
     playerScoreDisplay(playerWin);
     computerScoreDisplay(computerWin);
-    // gameResult(playerWin, computerWin);
+    gameResult(playerWin, computerWin);
 
 }
 
@@ -99,23 +99,20 @@ return announce;
 /* Announce game winner by comparing player and computer scores
 */
 
-// function gameResult(playerWin, computerWin) {
-
-// let gameWinner; 
-
-// if (playerWin > computerWin) {
-//     gameWinner = "Game Over! You win the game!"
-// } else if (playerWin < computerWin) {
-//     gameWinner = "Game Over! Computer wins the game!"
-// } else if (playerWin === computerWin) {
-//     gameWinner = "Game Over! The game ends in a draw."
-// }
-
-// playerScoreDisplay(playerWin);
-// computerScoreDisplay(computerWin);
-// gameResultDisplay(gameWinner);
-// }
-
+function gameResult(playerWin, computerWin) {
+    let gameWinner;
+ 
+     if (playerWin >= 5) {
+         gameWinner = "Game Over! You win the game!";
+     } else if (computerWin >= 5) {
+         gameWinner = "Game Over! Computer wins the game!";
+    } else {
+         gameWinner = "";
+    }
+ 
+     gameResultDisplay(gameWinner);
+ }
+  
 
 
 // CREATE DOM ELEMENTS
