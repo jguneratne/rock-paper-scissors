@@ -1,4 +1,8 @@
 
+let playerWin = 0;
+let computerWin = 0;
+
+
 const buttonsContainer = document.getElementById('button')
     buttonsContainer.addEventListener('click', function (event) {
     const playerSelection = getPlayerChoice(event);
@@ -41,9 +45,6 @@ function getPlayerChoice(event) {
 // Build function that checks winner each round
 
 function checkWinner(playerSelection, computerSelection) { 
-
-    let playerWin = 0;
-    let computerWin = 0;
 
     if 
     (playerSelection === computerSelection) {
