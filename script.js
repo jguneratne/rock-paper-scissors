@@ -104,18 +104,36 @@ function gameResult(playerWin, computerWin) {
  
      if (playerWin >= 5) {
          gameWinner = "Game Over! You win the game!";
+         resetGameOut();
      } else if (computerWin >= 5) {
          gameWinner = "Game Over! Computer wins the game!";
+         resetGameOut();
     } else {
          gameWinner = "";
     }
  
      gameResultDisplay(gameWinner);
  }
-  
+   
 
 
 // CREATE DOM ELEMENTS
+
+// Start Game
+
+function startGame() {
+    let start = document.querySelector('.start-btn');
+    let introScreen = document.querySelector('.intro');
+    let game = document.querySelector('.game');
+    
+    start.addEventListener('click', function() {
+        introScreen.classList.add('fadeOut');
+        game.classList.add("fadeIn");
+    })
+    
+    resetGameIn(game);
+    resetGameOut(introScreen, game);
+}
 
 // Build function to display computer DOM element from getComputerChoice
 
@@ -158,3 +176,31 @@ function gameResultDisplay(gameWinner) {
     gameResultDisplay.appendChild(gameResult);
 }
 
+function resetGameIn(game) {
+    let reset = document.querySelector('.reset-btn');
+    let resetScreen = document.querySelector('.reset');
+    game = document.querySelector('.game');
+    
+    reset.addEventListener('click', function() {
+        game.classList.add('fadeOut');
+        resetScreen.classList.add("fadeIn");
+    })
+
+}
+
+function resetGameOut(introScreen) {
+    let reset = document.querySelector('.reset-btn');
+    let resetScreen = document.querySelector('.reset');
+    introScreen = document.querySelector('.intro');
+    
+    reset.addEventListener('click', function() {
+        resetScreen.classList.add('fadeOut');
+        introScreen.classList.add("fadeIn");
+    })
+
+}
+
+
+window.onload = function() {
+    startGame();
+}
