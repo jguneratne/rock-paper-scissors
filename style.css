@@ -1,11 +1,15 @@
 .rps, 
+.btn-header,
+.start-button,
 .round, 
 .score-board,
-.game-result {
+.game-result,
+.reset {
     text-align: center;
 }
 
-.select {
+.select,
+.score-num {
     text-align: center;
 }
 
@@ -13,5 +17,23 @@
 .score {
     display: flex;
     justify-content: space-around;
+}
+
+.intro {
+    transition: opacity 0.5s ease;
+}
+
+.game {
+    transition: opacity 0.5s ease 0.5s;
+}
+
+div.fadeOut {
+    opacity: 0;
+    pointer-events: none;
+}
+
+div.fadeIn {
+    opacity: 1;
+    pointer-events: all; 
 }
 
