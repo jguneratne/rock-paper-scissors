@@ -10,28 +10,59 @@
 </head>
 <body>
 
-    <h2 class = rps>ROCK, PAPER, SCISSORS</h2>
+    <header>
+        <div class="header-img">
+            <img class="rps" src="./images/cartoon-rock-paper-scissors-vector-characters-headersize.jpeg" alt="Rock, Paper, Scissors Characters from vecteezy.com">
+        </div>
+    </header>
 
         <div class="intro">
-            <h3 class="btn-header">First to five points wins!</h3>
+            <h3 class="btn-header">The first to reach five points wins!</h3>
                 <div class="start-button">
                     <button class="start-btn">Let's Play!</button>
                 </div>
         </div>
     
-    <div class="game">
+    <div class="game fadeOut">
         <div class="select">
             <h3 class="input">Make Your Choice:</h3>
-                <div id="button">
-                    <button class="rock"> Rock </button>
-                    <button class="paper"> Paper </button>
-                    <button class="scissors"> Scissors </button>
+
+                <div class="selections">
+                    <div class="rock">
+                        <img class="rock-img" src="./images/rock-line-icons.jpeg" alt="Rock icon from vecteezy.com">
+                    </div>
+
+                    <div class="paper">
+                        <img class="paper-img" src="./images/paper-line-icons.jpeg" alt="Paper icon from vecteezy.com">
+                    </div>
+
+                    <div class="scissors">
+                        <img class="scissors-img" src="./images/scissors-line-icons.jpeg" alt="Scissors icon from vecteezy.com">
+                    </div>
+                </div>
+
+                <div class="selections-btns">
+                    <div class="pick">
+                        <button class="rock-btn"></button>
+                    </div>
+
+                    <div class="pick">
+                        <button class="paper-btn"></button>
+                    </div>
+
+                    <div class="pick">
+                        <button class="scissors-btn"></button>
+                    </div>
                 </div>
         </div>
 
             <div class="choice">
-                <h4 class="player-choice">Player Choice:</h4>
-                <h4 class="computer-choice">Computer Choice: </h3>
+                <div class="player-choice">
+                    <h4>Player Choice:</h4>
+                </div>
+                <div class="computer-choice">
+                    <h4>Computer Choice: </h3>
+                </div>
             </div>        
 
         <div class="round">
@@ -40,23 +71,34 @@
         
         <h3 class="score-board">Score Board:</h3>
 
-        <div class = score>
-            <h4 class="player-score">Player Score: 
-                <p class="player-counter" data-score="0">0</p>
-            </h4>
-            <h4 class="computer-score">Computer Score: 
-                <p class="computer-counter" data-score="0">0</p>
-            </h4>
+        <div class="scores">
+            <div class="player-score">
+                <h4>Player Score: 
+                    <p class="player-counter" data-score="0">0</p>
+                </h4>
+            </div>
+
+            <div class="computer-score">
+                <h4>Computer Score: 
+                    <p class="computer-counter" data-score="0">0</p>
+                </h4>
+            </div>
         </div>
 
+        
+    </div>
+
+    <div class="result-reset fadeOut">
         <h3 class="game-result">Game Result:</h3>
+
+        <div class="reset">
+            <button class="reset-btn">Play Again?</button>
+        </div>
     </div>
 
-    <div class="reset">
-        <button class="reset-btn">Play Again?</button>
-    </div>
+    
 
-
+    <footer class="attributions">images © vecteezy.com</footer>
 
 
 <script src = "script.js"></script>
