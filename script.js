@@ -124,15 +124,19 @@ function startGame() {
     let start = document.querySelector('.start-btn');
     let introScreen = document.querySelector('.intro');
     let game = document.querySelector('.game');
+    let reset = document.querySelector('.result-reset');
     
-    start.addEventListener('click', function() {
-        introScreen.classList.add('fadeOut');
-        game.classList.add("fadeIn");
+    start.addEventListener('click', function(event) {
+        if (event.target.matches('.start-btn')) {
+            introScreen.classList.add('fadeOut');
+            game.classList.add("fadeIn");
+        }
     })
     
-    resetGameIn(game);
-    resetGameOut(introScreen, game);
+    resetGame(game);
 }
+
+
 
 // Display computer DOM element from getComputerChoice
 
@@ -180,27 +184,34 @@ function gameResultDisplay(gameWinner) {
 function scoreFive(playerWin, computerWin) {
     //let reset = document.querySelector('.reset-btn');
     let resetScreen = document.querySelector('.result-reset');
-    game = document.querySelector('.game');
+    let game = document.querySelector('.game');
     
 
     if ((playerWin >= 5) || (computerWin >= 5))  {
         resetScreen.classList.add("fadeIn");
-        game.classList.add('fadeOut');
+        game.classList.remove('fadeIn');
     } 
 
 }
 
-function resetGameOut(introScreen) {
+function resetGame(game, playerWin, computerWin) {
     let reset = document.querySelector('.reset-btn');
     let resetScreen = document.querySelector('.result-reset');
-    introScreen = document.querySelector('.intro');
+    let goodbye = document.querySelector('.goodbye');
     
-    reset.addEventListener('click', function() {
-        resetScreen.classList.add('fadeOut');
-        introScreen.classList.add('fadeIn');
+    resetScreen.addEventListener('click', function(event) {
+        if (event.target.matches('.reset-btn')) {
+            resetScreen.classList.toggle('fadeIn');
+            game.classList.add("fadeIn");
+            playerWin = 0;
+            computerWin = 0;
+        } else if (event.target.matches('.end-btn')) {
+            goodbye.classList.add('fadeIn');
+        }
     })
 
 }
+
 
 window.onload = function() {
     startGame();
