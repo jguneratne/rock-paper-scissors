@@ -195,7 +195,6 @@ function scoreFive(playerWin, computerWin) {
 }
 
 function resetGame(game, playerWin, computerWin) {
-    let reset = document.querySelector('.reset-btn');
     let resetScreen = document.querySelector('.result-reset');
     let goodbye = document.querySelector('.goodbye');
     
@@ -207,6 +206,7 @@ function resetGame(game, playerWin, computerWin) {
             computerWin = 0;
         } else if (event.target.matches('.end-btn')) {
             goodbye.classList.add('fadeIn');
+            resetScreen.classList.toggle('fadeIn');
         }
     })
 
