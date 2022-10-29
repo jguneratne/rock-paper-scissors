@@ -4,101 +4,148 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mali:wght@200;300;400;500;600;700&family=Mulish:wght@250;400&family=Roboto:ital,wght@0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    
+
     <title>Rock, Paper, Scissors</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+<div class="main">
+    
     <header>
         <div class="header-img">
-            <img class="rps" src="./images/cartoon-rock-paper-scissors-vector-characters-headersize.jpeg" alt="Rock, Paper, Scissors Characters from vecteezy.com">
+            <img class="rps" src="./images/rps-header.jpeg" alt="Rock, Paper, Scissors Characters from vecteezy.com">
         </div>
     </header>
 
-        <div class="intro">
-            <h3 class="btn-header">The first to reach five points wins!</h3>
-                <div class="start-button">
-                    <button class="start-btn">Let's Play!</button>
-                </div>
-        </div>
+    <div class="intro">
+        <h3 class="btn-header">The first to reach five points wins!</h3>
+            <div class="start-button">
+                <button class="start-btn">Let's Play!</button>
+            </div>
+    </div>
     
+
     <div class="game fadeOut">
-        <div class="select">
-            <h3 class="input">Make Your Choice:</h3>
-
-                <div class="selections">
-                    <div class="rock">
-                        <img class="rock-img" src="./images/rock-line-icons.jpeg" alt="Rock icon from vecteezy.com">
-                    </div>
-
-                    <div class="paper">
-                        <img class="paper-img" src="./images/paper-line-icons.jpeg" alt="Paper icon from vecteezy.com">
-                    </div>
-
-                    <div class="scissors">
-                        <img class="scissors-img" src="./images/scissors-line-icons.jpeg" alt="Scissors icon from vecteezy.com">
-                    </div>
-                </div>
-
-                <div class="selections-btns">
-                    <div class="pick">
-                        <button class="rock-btn"></button>
-                    </div>
-
-                    <div class="pick">
-                        <button class="paper-btn"></button>
-                    </div>
-
-                    <div class="pick">
-                        <button class="scissors-btn"></button>
-                    </div>
-                </div>
-        </div>
-
-            <div class="choice">
-                <div class="player-choice">
-                    <h4>Player Choice:</h4>
-                </div>
-                <div class="computer-choice">
-                    <h4>Computer Choice: </h3>
-                </div>
-            </div>        
-
-        <div class="round">
-            <h3 class="round-result">Round Result:</h3>
-        </div>
         
-        <h3 class="score-board">Score Board:</h3>
+        <div class="choice-container">
+            <div class="choice-display">
+                <div class="choice-title">
+                    <h3 class="input">Make Your Choice:</h3>
+                </div>       
 
-        <div class="scores">
-            <div class="player-score">
-                <h4>Player Score: 
-                    <p class="player-counter" data-score="0">0</p>
-                </h4>
+                <div class="choice-board">
+                    <div class="choice">
+                        <div class="player-choice">
+                            <h4 class="p-choice">Player Choice:</h4>
+                        </div>
+                        <div class="computer-choice">
+                            <h4 class="c-choice">Computer Choice: </h3>
+                        </div>
+                    </div> 
+
+                    <div class="btns-box">
+                        <div class="selections">
+                            <div class="rock">
+                                <img class="rock-img" src="./images/rock-line-icons.jpeg" alt="Rock icon from vecteezy.com">
+                            </div>
+
+                            <div class="paper">
+                                <img class="paper-img" src="./images/paper-line-icons.jpeg" alt="Paper icon from vecteezy.com">
+                            </div>
+
+                            <div class="scissors">
+                                <img class="scissors-img" src="./images/scissors-line-icons.jpeg" alt="Scissors icon from vecteezy.com">
+                            </div>
+                        </div>
+
+                        <div class="selections-btns">
+                            <div class="pick">
+                                <button class="rock-btn"></button>
+                            </div>
+
+                            <div class="pick">
+                                <button class="paper-btn"></button>
+                            </div>
+
+                            <div class="pick">
+                                <button class="scissors-btn"></button>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div>
+
+                <div class="round-result">
+                    <h3 class="result">Round Result:</h3>
+                </div>
+
             </div>
 
-            <div class="computer-score">
-                <h4>Computer Score: 
-                    <p class="computer-counter" data-score="0">0</p>
-                </h4>
+        </div>
+
+        
+        <div class="score-container">
+            <div class="score-board">
+                <div class="score-title">
+                    <h3>Score Board:</h3>
+                </div>
+
+                <div class="scores">
+                    <div class="player-score">
+                        <h4>Player Score: 
+                            <p class="player-counter" data-score="0">0</p>
+                        </h4>
+                    </div>
+
+                    <div class="computer-score">
+                        <h4>Computer Score: 
+                            <p class="computer-counter" data-score="0">0</p>
+                        </h4>
+                    </div>
+                </div>
             </div>
         </div>
+
+    </div>
 
         
     </div>
 
     <div class="result-reset fadeOut">
-        <h3 class="game-result">Game Result:</h3>
+        <h3 class="game-result"></h3>
 
         <div class="reset">
             <button class="reset-btn">Play Again?</button>
+            <button class="end-btn">End Game</button>
         </div>
+    
     </div>
 
-    
+    <div class="goodbye fadeOut">
+        <h3 class="thanks">Thanks for playing,</h3>
+        <h4 class="see-you">See you next time!</h4>
 
-    <footer class="attributions">images © vecteezy.com</footer>
+        <div class="reload">
+            <div class="reload-image">
+                <img class="reload-img" src="./images/reload.jpeg" alt="Reload icon from vecteezy.com">
+            </div>
+       
+            <div class="reload-button">
+                <button class="reload-btn"></button>
+            </div>
+        </div>
+
+    </div>
+
+</div>    
+
+    <footer class="footer">images © vecteezy.com</footer>
 
 
 <script src = "script.js"></script>

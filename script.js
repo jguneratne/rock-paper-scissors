@@ -103,15 +103,18 @@ function gameResult(playerWin, computerWin) {
     if (playerWin >= 5) {
         gameWinner = "Game Over! You win the game!";
         scoreFive();
+        
     } else if (computerWin >= 5) {
         gameWinner = "Game Over! Computer wins the game!";
         scoreFive();
+    
    } else {
         gameWinner = "";
    }
 
     gameResultDisplay(gameWinner);
     scoreFive(playerWin, computerWin);
+    resetGame(playerWin, computerWin);
 }
    
 
@@ -141,14 +144,14 @@ function startGame() {
 // Display computer DOM element from getComputerChoice
 
 function displayComputerChoice(computerSelection) {
-    document.querySelector('.computer-choice').textContent = `Computer Choice: ${computerSelection}`;
+    document.querySelector('.c-choice').textContent = `Computer Choice: ${computerSelection}`;
 }
 
 
 // Display player DOM element from getPlayerChoice
 
 function displayPlayerChoice(playerSelection) {
-    document.querySelector('.player-choice').textContent = `Player Choice: ${playerSelection}`;
+    document.querySelector('.p-choice').textContent = `Player Choice: ${playerSelection}`;
 }
 
 // Display Player Score as DOM element
@@ -167,7 +170,7 @@ function computerScoreDisplay(computerWin) {
 // Display result of Round as DOM element
 
 function roundResult(announce) {
-    document.querySelector('.round-result').textContent = `${announce}`;
+    document.querySelector('.result').textContent = `${announce}`;
 }
 
 // Display Game Result as DOM element
@@ -177,12 +180,13 @@ function gameResultDisplay(gameWinner) {
     gameResult.innerText = gameWinner;
     let gameResultDisplay = document.querySelector('.game-result');
     gameResultDisplay.appendChild(gameResult);
+
+    resetGame(gameWinner);
 }
 
 // Reset Game Button
 
 function scoreFive(playerWin, computerWin) {
-    //let reset = document.querySelector('.reset-btn');
     let resetScreen = document.querySelector('.result-reset');
     let game = document.querySelector('.game');
     
@@ -190,29 +194,35 @@ function scoreFive(playerWin, computerWin) {
     if ((playerWin >= 5) || (computerWin >= 5))  {
         resetScreen.classList.add("fadeIn");
         game.classList.remove('fadeIn');
+        resetGame();
     } 
 
 }
 
-function resetGame(game, playerWin, computerWin) {
+function resetGame(playerWin, computerWin, game, gameWinner) {
     let resetScreen = document.querySelector('.result-reset');
     let goodbye = document.querySelector('.goodbye');
     
     resetScreen.addEventListener('click', function(event) {
         if (event.target.matches('.reset-btn')) {
-            resetScreen.classList.toggle('fadeIn');
-            game.classList.add("fadeIn");
             playerWin = 0;
+            document.querySelector('.player-score p').textContent = `${playerWin}`;
+            document.querySelector('.p-choice').textContent = `Player Choice:`;
             computerWin = 0;
+            document.querySelector('.computer-score p').textContent = `${computerWin}`;
+            document.querySelector('.c-choice').textContent = `Computer Choice:`;
+            document.querySelector('.result').textContent = '';
+            gameWinner = '';
+            resetScreen.classList.remove('fadeIn');
+            game.classList.add("fadeIn");
+            
         } else if (event.target.matches('.end-btn')) {
             goodbye.classList.add('fadeIn');
-            resetScreen.classList.toggle('fadeIn');
+            resetScreen.classList.remove('fadeIn');
         }
     })
 
 }
 
 
-window.onload = function() {
-    startGame();
-}
+startGame();
