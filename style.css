@@ -42,7 +42,7 @@ body {
 .choice-container {
     display: flex;
     justify-content: center;
-    border: red solid 2px;
+    /* border: red solid 2px; */
     height: 260px;
 }
 
@@ -57,12 +57,12 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border: blue solid 2px;
+    /* border: blue solid 2px; */
     width: 600px;
 }
 
 .btns-box {
-    border: purple solid 2px;
+    /* border: purple solid 2px; */
     position: relative;
     height: 170px;
     top: -130px;
@@ -79,22 +79,37 @@ body {
 .round-result {
     display: flex;
     justify-content: center;
-    width: 604px;
+    align-items: center;
+    border: 2px #565555 solid;
+    border-radius: 5px; 
+    padding: 0px;
+    text-align: center;
+    width: 596px;
+    height: 40px;
+    background-color: #FFF09B;
     position: relative;
-    top: -190px;
+    top: -160px;
 }
 
 .player-choice,
 .computer-choice,
 .player-score,
 .computer-score {
-    border: 2px black solid;
+    border: 2px #565555 solid;
     border-radius: 5px;
     padding: 0px;
     width: 140px;
     height: 140px;
     text-align: center;
 
+}
+
+.player-choice {
+    background-color: #7fcfda;
+}
+
+.computer-choice {
+    background-color: #f5b4d5;
 }
 
 .score-container {
@@ -107,23 +122,33 @@ body {
     flex-direction: column;
     align-items: center;
     margin: 10px;
-    border: 2px black solid;
-    border-radius: 5px;
+    border: 2px #565555 solid;
+    border-radius: 5px; 
     padding: 0px;
     text-align: center;
-    width: 304px;
-    height: 211px;
+    width: 324px;
+    height: 164px;
+    background-color: #FFF09B;
 }
 
 .player-score, 
 .computer-score {
     margin: 10px;
+    position: relative;
+    /* top: -10px; */
+}
+
+.player-score {
+    background-color: #7fcfda;
+}
+
+.computer-score {
+    background-color: #f5b4d5;
 }
 
 .scores {
     display: flex;
 }
-
 
 
 .selections-btns {
@@ -153,12 +178,12 @@ body {
 .start-button,
 .round, 
 .result-reset,
-.goodbye,
 .reload,
 .reload-img,
 .reload-btn  {
     text-align: center;
 }
+
 
 .result-reset {
     background-color: rgba(255, 0, 0, 0.2);
@@ -198,15 +223,19 @@ body {
 }
 
 .goodbye {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     height: 300px; 
     position: relative;
-    top: -880px;
+    top: -860px;
 }
 
 .thanks {
     font-family: Mali, cursive;
     font-size: 28px;
+    text-align: center;
     position: relative;
    
 }
@@ -214,39 +243,39 @@ body {
 .see-you {
     font-family: Mulish, sans-serif;
     font-size: 22px;   
+    text-align: center;
     position: relative;
     top: -30px;
 }
 
-.reload {
+.reload-page {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    position: relative;
 }
 
 .reload-image {
-    /* display: flex;
-    justify-content: space-around; */
-    align-items: center;
+    display: flex;
+    margin: 0;
     position: relative;
-    top: -800;
 }
 
 .reload-button {
-    /* display: flex;
-    justify-content: space-around; */
-    align-items: center;
+    display: flex;
+    margin: 0;
     position: relative;
-    left: -30;
+    top: -60px;
+    border-radius: 50%;
+    border: none;
+    opacity: 30%
 }
 
 .reload-img,
 .reload-btn {
     height: 60px;
     width: 60px;
+    margin: 0;
 }
-
 
 .score-num {
     text-align: center;
