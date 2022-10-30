@@ -4,6 +4,7 @@
 let playerWin = 0;
 let computerWin = 0;
 const gameDiv = document.querySelector('.game');
+let gameEnd = document.querySelector('.game-result');
 const resetScreen = document.querySelector('.result-reset');
 const goodbye = document.querySelector('.goodbye');
 const reload = document.querySelector('.reload-btn');
@@ -185,11 +186,7 @@ function roundResult(announce) {
 // Display Game Result as DOM element
 
 function gameResultDisplay(gameWinner) {
-    let gameResult = document.createElement('p');
-    gameResult.textContent = gameWinner;
-    let gameResultDisplay = document.querySelector('.game-result');
-    gameResultDisplay.appendChild(gameResult);
-
+    gameEnd.textContent += `${gameWinner}`;
 }
 
 // Reset Game Button
@@ -218,6 +215,7 @@ function resetGame(event) {
             document.querySelector('.computer-score p').textContent = `${computerWin}`;
             document.querySelector('.c-choice').textContent = `Computer Choice:`;
             document.querySelector('.result').textContent = '';
+            gameEnd = '';
             
         } else if (event.target.matches('.end-btn')) {
             goodbye.classList.add('fadeIn');
