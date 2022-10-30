@@ -4,7 +4,7 @@ let computerWin = 0;
 const gameDiv = document.querySelector('.game');
 const resetScreen = document.querySelector('.result-reset');
 const goodbye = document.querySelector('.goodbye');
-
+const reload = document.querySelector('.reload-btn');
 
 const buttonsContainer = document.querySelector('.btns-box')
     buttonsContainer.addEventListener('click', function (event) {
@@ -219,11 +219,13 @@ function resetGame(event) {
             
     }
 
-     // goodbye.addEventListener('click'), function(event) {
-        //     if (event.target.matches('.reload-btn')) {
-        //         window.location;
-        //     }
-        // }
+reload.addEventListener('click', reloadPage);
+
+function reloadPage(event) {
+    if (event.target.matches('.reload-btn')) {
+        location.reload();
+    }
+}
 
 
 startGame();
