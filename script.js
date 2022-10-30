@@ -1,10 +1,14 @@
 
+// Global Variables
+
 let playerWin = 0;
 let computerWin = 0;
 const gameDiv = document.querySelector('.game');
 const resetScreen = document.querySelector('.result-reset');
 const goodbye = document.querySelector('.goodbye');
 const reload = document.querySelector('.reload-btn');
+
+// Click Events
 
 const buttonsContainer = document.querySelector('.btns-box')
     buttonsContainer.addEventListener('click', function (event) {
@@ -13,8 +17,14 @@ const buttonsContainer = document.querySelector('.btns-box')
     const result = checkWinner(playerSelection, computerSelection);
 });
 
+resetScreen.addEventListener('click', resetGame);
 
-// Build getComputerChoice function that allows computer to make random selection
+reload.addEventListener('click', reloadPage);
+
+
+
+
+// Function that allows computer to make random selection
 
 function getComputerChoice() {
 
@@ -26,7 +36,7 @@ function getComputerChoice() {
 }
 
 
-//Build function to take the player choice
+// Function to take the player choice
 
 function getPlayerChoice(event) {
 
@@ -45,7 +55,7 @@ function getPlayerChoice(event) {
 }
 
 
-// Build function that checks winner each round
+// Function that checks winner each round
 
 function checkWinner(playerSelection, computerSelection) { 
 
@@ -73,7 +83,7 @@ function checkWinner(playerSelection, computerSelection) {
 }
 
 
-/* Build playRound function that represents a single round of the game
+/* Function that represents a single round of the game,
 conditional statements checking winner of each round
 */ 
 
@@ -140,7 +150,6 @@ function startGame() {
 }
 
 
-
 // Display computer DOM element from getComputerChoice
 
 function displayComputerChoice(computerSelection) {
@@ -197,8 +206,6 @@ function scoreFive() {
 }
 
 
-resetScreen.addEventListener('click', resetGame);
-
 function resetGame(event) {
     
         if (event.target.matches('.reset-btn')) {
@@ -218,8 +225,6 @@ function resetGame(event) {
         }
             
     }
-
-reload.addEventListener('click', reloadPage);
 
 function reloadPage(event) {
     if (event.target.matches('.reload-btn')) {
