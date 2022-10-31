@@ -17,8 +17,6 @@ body {
 
 .intro {
     height: 175px;
-    font-family: Mali, cursive;
-    font-size: 28px;
     opacity: 1;
     -webkit-transition: opacity 0.7s ease-in-out;
     -moz-transition: opacity 0.7s ease-in-out;
@@ -27,13 +25,20 @@ body {
     transition: opacity 0.7s ease-in-out;
 }
 
+.btn-header {
+    font-family: Mali, cursive;
+    font-size: 36px;
+    color: black;
+    text-shadow: 4px 0px 6px rgb(109, 108, 108);
+}
+
 .start-btn {
     height: 80px;
     width: 200px;
     background-color: #04CAE4;
     border: 2px #565555 solid;
     border-radius: 30px;
-    font-family: Mali, sans-serif;
+    font-family: Mali, cursive;
     font-size: 28px;
     font-weight: 500;
     cursor: pointer;
@@ -54,6 +59,14 @@ body {
     -ms-transition: opacity 0.7s ease-in-out;
     -o-transition: opacity 0.7s ease-in-out;
     transition: opacity 0.7s ease-in-out 0.7s;
+}
+
+.input {
+    font-family: Mali, cursive;
+    font-size: 30px;
+    color: black;
+    text-shadow: 4px 0px 6px rgb(109, 108, 108);
+    /* text-shadow: 2px 0px 1px black; */
 }
 
 .choice-container {
@@ -132,6 +145,10 @@ body {
     border-radius: 5px; 
     padding: 0px;
     text-align: center;
+    font-family: Mulish, cursive;
+    font-weight: 400;
+    font-size: 18px;
+    color: black;
     width: 596px;
     height: 40px;
     background-color: #FFF09B;
@@ -169,7 +186,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 10px;
+    margin: 50px;
     border: 2px #565555 solid;
     border-radius: 5px; 
     padding: 0px;
@@ -196,6 +213,8 @@ body {
 
 .scores {
     display: flex;
+    position: relative;
+    
 }
 
 
@@ -215,7 +234,7 @@ body {
     background-color:#fae29a;
     height: 360px; 
     position: relative;
-    top: -640px;
+    top: -700px;
     opacity: 1;
     -webkit-transition: opacity 0.7s ease-in-out;
     -moz-transition: opacity 0.7s ease-in-out;
@@ -229,6 +248,10 @@ body {
     justify-content: center;
     align-items: center;
     padding-top: 40px;
+    font-family: Mali, cursive;
+    font-size: 32px;
+    color: black;
+    text-shadow: 4px 0px 6px rgb(109, 108, 108);
     opacity: 1;
     -webkit-transition: opacity 0.7s ease-in-out;
     -moz-transition: opacity 0.7s ease-in-out;
@@ -241,19 +264,19 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 200px;
+    height: 160px;
 }
 
 
 .reset-btn,
 .end-btn {
-    margin: 25px;
+    margin: 10px;
     height: 80px;
     width: 200px;
     background-color: #04CAE4;
     border: 2px #565555 solid;
     border-radius: 30px;
-    font-family: Mali, sans-serif;
+    font-family: Mulish, cursive;
     font-size: 28px;
     font-weight: 500;
     cursor: pointer;
@@ -281,12 +304,14 @@ body {
     align-items: center;
     height: 300px; 
     position: relative;
-    top: -920px;
+    top: -1000px;
 }
 
 .thanks {
     font-family: Mali, cursive;
     font-size: 28px;
+    color: black;
+    text-shadow: 4px 0px 6px rgb(109, 108, 108);
     text-align: center;
     position: relative;
    
@@ -295,6 +320,8 @@ body {
 .see-you {
     font-family: Mulish, sans-serif;
     font-size: 22px;   
+    color: black;
+    text-shadow: 4px 0px 6px rgb(109, 108, 108);
     text-align: center;
     position: relative;
     top: -30px;
