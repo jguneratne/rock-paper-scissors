@@ -27,6 +27,23 @@ body {
     transition: opacity 0.7s ease-in-out;
 }
 
+.start-btn {
+    height: 80px;
+    width: 200px;
+    background-color: #04CAE4;
+    border: 2px #565555 solid;
+    border-radius: 30px;
+    font-family: Mali, sans-serif;
+    font-size: 28px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.start-btn:hover {
+    background-color: #04CAE4;
+    opacity: 70%;
+}
+
 
 .game {
     position: relative;
@@ -74,6 +91,37 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+}
+
+.rock-img, 
+.paper-img,
+.scissors-img {
+    width: 100px;
+}
+
+
+.selections-btns {
+    position: relative;
+    top: -100px;
+}
+
+
+.rock-btn, 
+.paper-btn,
+.scissors-btn {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.rock-btn:hover, 
+.paper-btn:hover,
+.scissors-btn:hover {
+    background-color: lightgray;
+    opacity: 40%;
 }
 
 .round-result {
@@ -151,28 +199,6 @@ body {
 }
 
 
-.selections-btns {
-    position: relative;
-    top: -100px;
-    opacity: 30%;
-    pointer-events: pointer;
-}
-
-.rock-img, 
-.paper-img,
-.scissors-img {
-    width: 100px;
-}
-
-.rock-btn, 
-.paper-btn,
-.scissors-btn {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    border: none;
-}
-
 .rps, 
 .btn-header,
 .start-button,
@@ -217,9 +243,34 @@ body {
     align-items: center;
 }
 
+
 .reset-btn,
 .end-btn {
     margin: 25px;
+    height: 80px;
+    width: 200px;
+    background-color: #04CAE4;
+    border: 2px #565555 solid;
+    border-radius: 30px;
+    font-family: Mali, sans-serif;
+    font-size: 28px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.end-btn{
+    background-color: #FF52AB;
+}
+
+.reset-btn:hover,
+.end-btn:hover {
+    background-color: #04CAE4;
+    opacity: 70%;
+} 
+
+.end-btn:hover {
+    background-color: #FF52AB;
+    opacity: 80%;
 }
 
 .goodbye {
