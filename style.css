@@ -281,7 +281,7 @@ body {
     align-items: center;
     height: 300px; 
     position: relative;
-    top: -860px;
+    top: -920px;
 }
 
 .thanks {
@@ -310,16 +310,15 @@ body {
     display: flex;
     margin: 0;
     position: relative;
+    top: -40px;
 }
 
 .reload-button {
     display: flex;
     margin: 0;
     position: relative;
-    top: -60px;
-    border-radius: 50%;
-    border: none;
-    opacity: 30%
+    top: -100px;
+    
 }
 
 .reload-img,
@@ -327,6 +326,18 @@ body {
     height: 60px;
     width: 60px;
     margin: 0;
+}
+
+.reload-btn {
+    border-radius: 10px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.reload-btn:hover {
+    background-color: #00adef;
+    opacity: 30%;   
 }
 
 .score-num {
