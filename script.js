@@ -210,10 +210,10 @@ function resetGame(event) {
             gameDiv.classList.add("fadeIn");
             playerWin = 0;
             document.querySelector('.player-score p').textContent = `${playerWin}`;
-            document.querySelector('.p-choice').textContent = `Player Choice:`;
+            document.querySelector('.p-choice-display').textContent = '';
             computerWin = 0;
             document.querySelector('.computer-score p').textContent = `${computerWin}`;
-            document.querySelector('.c-choice').textContent = `Computer Choice:`;
+            document.querySelector('.c-choice-display').textContent = '';
             document.querySelector('.result').textContent = '';
             gameEnd = '';
             
