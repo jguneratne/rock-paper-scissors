@@ -400,10 +400,15 @@ body {
 }
 
 .footer {
-    background-color: lightgrey;
+    background-color: #FFF09B;
+    font-family: Mulish, cursive;
     text-align: center;
-    font-size: 18px;
-    padding: 6px;
+    font-size: 16px;
+    padding: 2px;
+}
+
+.imgAttrib {
+    font-size: 14px;
 }
 
 
