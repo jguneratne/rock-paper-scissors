@@ -389,10 +389,25 @@ body {
     font-family: Mulish, cursive;
     text-align: center;
     font-size: 16px;
-    padding: 2px;
+    padding: 10px;
 }
 
+.my-info,
 .imgAttrib {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    height: 28px;
+}
+
+.github-logo {
+    width: 40px;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+
+.vecteezy-link {
     font-size: 14px;
 }
 
