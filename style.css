@@ -28,9 +28,15 @@ body {
 .btn-header {
     font-family: Mali, cursive;
     font-size: 36px;
+    text-align: center;
     color: black;
     text-shadow: 4px 0px 6px rgb(109, 108, 108);
 }
+
+
+.start-button {
+    text-align: center;
+} 
 
 .start-btn {
     height: 80px;
@@ -246,24 +252,11 @@ body {
     
 }
 
-
-.rps, 
-.btn-header,
-.start-button,
-.round, 
-.result-reset,
-.reload,
-.reload-img,
-.reload-btn  {
-    text-align: center;
-}
-
-
 .result-reset {
     background-color:#fae29a;
     height: 360px; 
     position: relative;
-    top: -700px;
+    top: -730px;
     opacity: 1;
     -webkit-transition: opacity 0.7s ease-in-out;
     -moz-transition: opacity 0.7s ease-in-out;
