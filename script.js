@@ -151,17 +151,17 @@ function startGame() {
 }
 
 
-// Display computer DOM element from getComputerChoice
+/// Display computer DOM element from getComputerChoice
 
 function displayComputerChoice(computerSelection) {
-    document.querySelector('.c-choice').textContent = `Computer Choice: ${computerSelection}`;
+    document.querySelector('.c-choice-display').textContent = `${computerSelection}`;
 }
 
 
 // Display player DOM element from getPlayerChoice
 
 function displayPlayerChoice(playerSelection) {
-    document.querySelector('.p-choice').textContent = `Player Choice: ${playerSelection}`;
+    document.querySelector('.p-choice-display').textContent = `${playerSelection}`;
 }
 
 // Display Player Score as DOM element

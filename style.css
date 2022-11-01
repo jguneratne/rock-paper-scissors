@@ -88,7 +88,15 @@ body {
     flex-direction: row;
     justify-content: space-between;
     /* border: blue solid 2px; */
-    width: 600px;
+    width: 630px;
+}
+
+.p-choice-display, 
+.c-choice-display {
+    font-family: Mulish, cursive;
+    font-weight: bolder;
+    font-size: 30px;
+    color: black;
 }
 
 .btns-box {
@@ -137,6 +145,26 @@ body {
     opacity: 40%;
 }
 
+.p-choice, 
+.c-choice,
+.player-score,
+.computer-score {
+    font-family: Mali, cursive;
+    font-size: 16px;
+    color: black;
+}
+
+.player-counter, 
+.computer-counter {
+    font-family: Mulish, cursive;
+    font-weight: bolder;
+    font-size: 80px;
+    color: white;
+    text-shadow: 4px 2px 0px black;
+    position: relative;
+    top: -85px;
+}
+
 .round-result {
     display: flex;
     justify-content: center;
@@ -149,7 +177,7 @@ body {
     font-weight: 400;
     font-size: 18px;
     color: black;
-    width: 596px;
+    width: 630px;
     height: 40px;
     background-color: #FFF09B;
     position: relative;
@@ -163,8 +191,8 @@ body {
     border: 2px #565555 solid;
     border-radius: 5px;
     padding: 0px;
-    width: 140px;
-    height: 140px;
+    width: 150px;
+    height: 150px;
     text-align: center;
 
 }
@@ -180,6 +208,7 @@ body {
 .score-container {
     display: flex;
     justify-content: center;
+    margin: 10px;
 }
 
 .score-board {
@@ -198,7 +227,7 @@ body {
 
 .player-score, 
 .computer-score {
-    margin: 10px;
+    margin: 5px;
     position: relative;
     /* top: -10px; */
 }
@@ -321,7 +350,6 @@ body {
     font-family: Mulish, sans-serif;
     font-size: 22px;   
     color: black;
-    text-shadow: 4px 0px 6px rgb(109, 108, 108);
     text-align: center;
     position: relative;
     top: -30px;
