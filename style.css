@@ -72,13 +72,11 @@ body {
     font-size: 30px;
     color: black;
     text-shadow: 4px 0px 6px rgb(109, 108, 108);
-    /* text-shadow: 2px 0px 1px black; */
 }
 
 .choice-container {
     display: flex;
     justify-content: center;
-    /* border: red solid 2px; */
     height: 260px;
 }
 
@@ -93,7 +91,6 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    /* border: blue solid 2px; */
     width: 630px;
 }
 
@@ -106,7 +103,6 @@ body {
 }
 
 .btns-box {
-    /* border: purple solid 2px; */
     position: relative;
     height: 170px;
     top: -130px;
@@ -235,7 +231,6 @@ body {
 .computer-score {
     margin: 5px;
     position: relative;
-    /* top: -10px; */
 }
 
 .player-score {
@@ -388,9 +383,6 @@ body {
     opacity: 30%;   
 }
 
-.score-num {
-    text-align: center;
-}
 
 .footer {
     background-color: #FFF09B;
